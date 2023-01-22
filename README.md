@@ -12,9 +12,9 @@ The course covers the core concepts, algorithms, and data structures used for mo
 ## Abstract
 
 Vector search is a fundamental tool for systems that manipulate large collections of media: search engines, knowledge bases, content moderation tools, recommendation systems, etc.
-The discipline lays at the intersection of Artificial Intelligence and Database management systems. 
+The discipline lays at the intersection of Artificial Intelligence and Database Management Systems. 
 This course will cover the scientific foundations and practical implementation of vector search systems. 
-It will cover the feature extraction from input media, the fundamental algorithms (clustering, quantization, hashing), major vector indexing methods with their tradeoffs.
+It will cover the feature extraction from input media, the fundamental algorithms (clustering, quantization, hashing), major vector indexing methods with their tradeoffs and touch upon their use cases.
 The course will be evaluated with an exam and a project. 
 
 
@@ -22,11 +22,11 @@ The course will be evaluated with an exam and a project.
 
 **The class contents below are tentative.**
 
-
 1. Generalities 
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation.
-	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases. Similarity search is cost effective.
-	* The embedding contract. The embedding extractor and embedding indexer agree on the meaning of the distance. Separation of concerns.
+	* Advantages: scalability, instant updates, explainability.
+	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases.
+	* The embedding contractL: the embedding extractor and embedding indexer agree on the meaning of the distance. Separation of concerns.
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
 	
@@ -45,7 +45,7 @@ The course will be evaluated with an exam and a project.
 	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove.
 	* k-NN search vs. range search 
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
-	* Computing platform: local / service / CPU / GPU 
+	* Computing platform: local vs. service / CPU vs. GPU 
 
 1. Mathematical foundations
 	* Recap of relevant Linear Algebra
@@ -72,7 +72,7 @@ The course will be evaluated with an exam and a project.
 	
 1. Clustering
 	* Semantic clustering: properties (purity, as aid for annotation)
-	* Clustering from a similarity graph (spectral clustering)
+	* Clustering from a similarity graph (spectral clustering, agglomerative clustering)
 	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
 	* Relationship between vector clustering and quantization (OOD extension) 
 
@@ -85,18 +85,18 @@ The course will be evaluated with an exam and a project.
 1. Quantization for lossy vector compression
 	* Vector quantization is a topline (directly optimizes the objective)
 	* Binary quantization and hamming comparison 
-	* Product quantization. Chunked vector quantization. Optimized vector quantization
+	* Product quantization. Chunked vector quantization. Optimized vector quantization.
 	* Additive quantization. Extension of product quantization. Difficult to train: approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 
 1. Non-exhaustive search 
-	* Early works on bag-of-visual-words inspiration, using quantization. 
+	* Early works on bag-of-visual-words inspiration, based on quantization. 
 	* Voronoi diagram with search buckets.
 	* The inverted file model. Relationship with sparse matrices.
 	* Cost of coarse quantization vs. inverted list scanning. 
 
 1. Graph based indexes
 	* Early works: hierarchical k-means 
-	* Neighborhood graphs. How to construct them. NNdescent. 
+	* Neighborhood graphs. How to construct them. nearest neighbor descent. 
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps. 
 	* HNSW. A practical hierarchical graph-based index.
 	* NSG. Evolving a graph k-NN graph.
@@ -142,6 +142,8 @@ The course will be evaluated with an exam and a project.
 * Neural indexing from ["Transformer Memory as a Differentiable Search Index"](https://arxiv.org/abs/2202.06991), Tan & al. ArXiV'22
 
 * The hybrid RAM-disk index from ["Diskann: Fast accurate billion-point nearest neighbor search on a single node"](https://proceedings.neurips.cc/paper/2019/hash/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Abstract.html), Subramanya & al. NeurIPS'19
+
+* The nearest neighbor descent method from [Efficient k-nearest neighbor graph construction for generic similarity measures](https://www.ambuehler.ethz.ch/CDstore/www2011/proceedings/p577.pdf) from Dong et al., WWW'11
 
 ## Build
 
