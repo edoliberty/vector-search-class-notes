@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{vs}
+\begin{document}
+
+\lecture{XX}{Random-projection}{Edo Liberty and Matthijs Douse}
+
+We will give a simple proof of the following, rather amazing, fact. Every set of $n$ points 
+in a Euclidian space (say in dimension $d$) can be embedded into the Euclidean space of 
+dimension $k = O(\log(n)/\eps^2)$ such that all pairwise distances are preserved up distortion $1\pm \eps$.
+We will prove the construction of \cite{DasGuptaGupta99} which is simpler than the one in \cite{JL84}.
+
+\section*{Random projection}
+We will argue that a certain distribution over the choice of a matrix $\R \in \R^{k \times d}$ gives that:
+\begin{equation}
+\label{e1}
+\forall x \in \Sph^{d-1} \;\; \Pr\left[ \left| ||\frac{1}{\sqrt{k}}Rx|| - 1 \right| > \eps \right] \le \frac{1}{n^2} 
+\end{equation}
+Before we pick this distribution and show that Equation~\ref{e1} holds for it, let us first see
+that this gives the opening statement. 
+
+Consider a set of $n$ points $x_1,\ldots, x_n$ in Euclidean space $\R^d$. Embedding these points
+into a lower dimension while preserving all distances between
+them up to distortion $1\pm \eps$ means approximately preserving the norms of all 
+${n \choose 2}$ vectors $x_i - x_j$. Assuming Equation~\ref{e1} holds and using the union 
+bound, this property will fail to hold for at least one $x_i - x_j$ pair with probability at most ${n \choose 2}\frac{1}{n^2} \le 1/2$.
+Which means that all ${n \choose 2}$ point distances are preserved up to distortion $\eps$ with probability at least $1/2$.
+
+
+\section{Matrices with normally distributed independent entries}
+We consider the distribution of matrices $R$ such that each $R(i,j)$ is drawn independently from  a
+normal distribution with mean zero and variance $1$, $R(i,j) \sim \N(0,1)$. We show that for this
+distribution Equation~\ref{e1} holds for some $k \in O(\log(n)/\eps^2)$.
+
+First consider the random variable $z = \sum_{j=1}^{d}r(j)x(j)$ where $r(j) \sim \N(0,1)$. 
+To understand how the variable $z$ distributes we recall the two-stability of the
+normal distribution. Namely, if $z_3 = z_2 + z_1$ and 
+$z_1 \sim \N(\mu_1,\sigma_{1})$ and $z_2 \sim \N(\mu_2,\sigma_{2})$ then, $$z_3 \sim \N(\mu_1 + \mu_2,\sqrt{\sigma^{2}_{1} + \sigma^{2}_{2}}).$$
+In our case,  $r(i)x(i) \sim \N(0,x_{i})$ and therefore, $z = \sum_{i=1}^{d}r(i)x(i) \sim \N(0,\sqrt{\sum_{i=1}^{d}x^{2}_{i}}) \sim \N(0,1)$.
+%
+Now, note that each element in the vector $Rx$ distributes exactly like $z$.
+Defining $k$ identical copies of $z$, $z_1,\ldots,z_k$,
+We get that $||\frac{1}{\sqrt{k}}Rx||$ distributes exactly like $\sqrt{\frac{1}{k}\sum_{i=1}^{k} z^{2}_{i}}$.
+Thus, proving Equation~\ref{e1} reduces to showing that:
+\begin{equation}
+\Pr\left[ \left| \sqrt{\frac{1}{k}\sum_{i=1}^{k} z^{2}_{i}} - 1 \right| > \eps \right] \le \frac{1}{n^2} 
+\end{equation}
+for a set of independent normal random variables $z_1,\ldots,z_k \sim \N(0,1)$.
+It is sufficient to demanding that $\Pr[\sum_{i=1}^{k} z^{2}_{i} \ge k(1+\eps)^2]$ and $\Pr[\sum_{i=1}^{k} z^{2}_{i} \le k(1-\eps)^2]$ are both smaller than $1/2n^2$.
+We start with bounding the probability that $\sum_{i=1}^{k} z^{2}_{i} \ge k(1+\eps)$ (this is okay because $k(1+\eps) < k(1+\eps)^2$).
+\[
+\Pr[\sum z^{2}_{i} \ge k(1+\eps)] = \Pr[e^{\lambda \sum z^{2}_{i}} \le e^{\lambda k (1+\eps)}] \le (\E[e^{\lambda z^2}])^k/e^{\lambda k (1+\eps)}
+\]
+Since $z \sim \N(0,1)$ we can compute $\E[e^{\lambda z^2}]$ exactly:
+\[
+\E [e^{\lambda z^{2}}] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{\lambda t^{2}} e^{-\frac{t^{2}}{2}} dt =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{(t\sqrt{1-2\lambda})^{2}}{2}}dt = e^{\frac{1}{2} \log(1-2\lambda)}
+\]
+The final step is by substituting $t' = t\sqrt{1-2\lambda}$ and recalling that $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{t'^{2}}{2}}dt' = 1$.
+Finally, using the fact that $log(\frac{1}{1-2\lambda}) \le 2\lambda + 4\lambda^2$ for $\lambda \in [0,1/4]$ we have:
+\[
+\E [e^{\lambda z^{2}}] = \frac{1}{\sqrt{1-2\lambda}} = e^{\frac{1}{2} \log(\frac{1}{1-2\lambda})} \le e^{\lambda + 2\lambda^2}
+\]
+Substituting this into the equation above we have that:
+\[
+\Pr \le e^{k(\lambda  + 2\lambda^2) - k\lambda (1+\eps)} = e^{ 2k\lambda^2 - k\lambda\eps}  = e^{ - k\eps^2/8}  
+\]
+for $\lambda \leftarrow \eps/4$. Finally, our condition that 
+\[
+\Pr[\sum_{i=1}^{k} z^{2}_{i} \ge k(1+\eps)] \le e^{ - k\eps^2/8} \le 1/2n^2
+\]
+is achieved by $k = c\log(n)/\eps^2$.
+Calculating for $\Pr[\sum_{i=1}^{k} z^{2}_{i} \le k(1-\eps)]$ in the same manner shows that $k = c\log(n)/\eps^2$ is also sufficient for this case.
+This completes the proof.
+
+
+\bibliographystyle{unsrt}
+\bibliography{vs.bib}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%

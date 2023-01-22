@@ -1,0 +1,67 @@
+
+%%%% PACKAGES %%%%
+\usepackage{fullpage}
+\usepackage{algorithm,algorithmic}
+\usepackage{amsfonts, amsmath, amsthm}
+\usepackage{graphicx}
+%for dotted lines inside matrices
+\usepackage{arydshln}
+\setlength{\dashlinedash}{.8pt} %
+\setlength{\dashlinegap}{1.2pt} %
+
+%%%% ENVIRONMENTS %%%%
+\newtheorem{definition}{Definition}[section]
+\newtheorem{fact}{Fact}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+%%%% COMMANDS %%%%
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\Var}{{\operatorname{Var}}}
+\newcommand{\var}{{\operatorname{Var}}}
+\newcommand{\poly}{{\operatorname{poly}}}
+\newcommand{\const}{{\operatorname{const}}}
+\newcommand{\OPT}{{\operatorname{OPT}}}
+\newcommand{\ALG}{{\operatorname{ALG}}}
+
+
+\newcommand{\allones}{\mathbf{1}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\tab}{\hspace{.5cm}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Sph}{{\mathbb{S}}}
+\newcommand{\N}{{\mathcal{N}}}
+
+
+\newcommand{\lecture}[3]{
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf Vector Search
+		\hfill Class \#XXXXX Fall 2023} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture number #1: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it Lectures: #3 \hfill}}% \hfill Scribes: #4} }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Lectures #1: #2,  #3}{Lectures #1: #2,  #3}
+{\small
+   {\bf Warning}: {\it
+   Please do not cite this note as a peer reviewed source. 
+   If you find mistakes, please inform the authors.}
+   \vspace*{4mm}}
+   \hrule
+   \vspace{1cm}
+}
+
+%%%% COMMON DEFS %%%%
+\date{\nonumber}
+
