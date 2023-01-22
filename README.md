@@ -113,6 +113,7 @@ The course will be evaluated with an exam and a project.
 	* Vectors in Generative AI 
 	* Neural quantization 
 	* Vector Databases 
+	* Beyond feature extraction and indexing: neural indexing 
 	
 1. Project setup
 
@@ -136,8 +137,11 @@ The course will be evaluated with an exam and a project.
 
 * The Local search quantization method from ["Revisiting additive quantization"](https://drive.google.com/file/d/1dDuv6fQozLQFS2AJoNNFGTH499QIp_vO/view), Julieta Martinez, et al. ECCV 2016 and ["LSQ++: Lower running time and higher recall in multi-codebook quantization"](https://openaccess.thecvf.com/content_ECCV_2018/html/Julieta_Martinez_LSQ_lower_runtime_ECCV_2018_paper.html), Julieta Martinez, et al. ECCV 2018.
 
-* The residual quantizer implementation from ["Improved Residual Vector Quantization for High-dimensional Approximate Nearest Neighbor Search"](https://arxiv.org/abs/1509.05195), Shicong Liu et al, AAAI'15.
+* The learning based quantizer from ["Unsupervised Neural Quantization for Compressed-Domain Similarity Search"](https://openaccess.thecvf.com/content_ICCV_2019/html/Morozov_Unsupervised_Neural_Quantization_for_Compressed-Domain_Similarity_Search_ICCV_2019_paper.html), Morozov and Banenko, ICCV'19
 
+* Neural indexing from ["Transformer Memory as a Differentiable Search Index"](https://arxiv.org/abs/2202.06991), Tan & al. ArXiV'22
+
+* The hybrid RAM-disk index from ["Diskann: Fast accurate billion-point nearest neighbor search on a single node"](https://proceedings.neurips.cc/paper/2019/hash/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Abstract.html), Subramanya & al. NeurIPS'19
 
 ## Build
 
