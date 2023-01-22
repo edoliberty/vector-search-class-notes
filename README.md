@@ -13,10 +13,17 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 **The class contents below are tentative.**
 
-1. Text embeddings 
+1. Generalities 
+	* embeddings as an information bottleneck _we don't do end-to-end but embeddings in the middle_
+	* scalability and typical volumes of data _embeddings are the only way to access large databases_
+	* the embedding contract _embedding extractor and embedding indexer agree on the semantic meaning of the distance_ 
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
-	* Large Language Models
+1. Text embeddings
+        * 2-layer word embeddings _word2vec and fastText_ 
+	* embedding arithmetic _king + woman - man = queen, already based on similairty search_
+	* sentence embeddings _how to train, masked LM_
+	* Large Language Models _reasoning as an emerging property of a LM and what happens when training set = the whole web_
 1. Image embeddings 
 	* Pixel structures of images
 	* Traditional CV models 
