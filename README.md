@@ -13,53 +13,27 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 **The class contents below are tentative.**
 
-### Generalities 
-
-Embeddings as an information bottleneck. 
-We don't do end-to-end but use embeddings as an intermediate representation.
-
-Typical volumes of data and scalability. 
-embeddings are the only way to manage / access large databases
-
-The embedding contract 
-The embedding extractor and embedding indexer agree on the meaning of the distance
-
-The vector space model in information retrieval
-
-Vector embeddings in machine learning
-
-### Text embeddings
-
-2-layer word embeddings 
-Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. 
-Embedding arithmetic: king + woman - man = queen, which is already based on similairty search
-
-Sentence embeddings: How to train, masked LM.
-Properties of sentence embeddings
-
-Large Language Models: reasoning as an emerging property of a LM and what happens when training set = the whole web
-
-### Image embeddings 
-
-Pixel structures of images. Early works on pixel indexing
-
-Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends), direct indexing for image matching, pooling (Fisher, VLAD)
-
-Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
-
-Advanced computer vision models 
-
-### Practical indexing
-
-How an index works: basic and optional functionalities 
-
-Criteria: Speed / accuracy / memory usage / updateability / index construction time 
-
-Computing platform: local / service / CPU / GPU 
-
-k-NN search vs. range search 
-
-### Mathematical foundations
+1. Generalities 
+- Embeddings as an information bottleneck. We don't do end-to-end but use embeddings as an intermediate representation.
+- Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
+- The embedding contract. The embedding extractor and embedding indexer agree on the meaning of the distance
+- The vector space model in information retrieval
+- Vector embeddings in machine learning
+1. Text embeddings
+- 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. Embedding arithmetic: king + woman - man = queen, which is already based on similairty search
+- Sentence embeddings: How to train, masked LM. Properties of sentence embeddings
+- Large Language Models: reasoning as an emerging property of a LM and what happens when training set = the whole web
+1. Image embeddings 
+* Pixel structures of images. Early works on pixel indexing
+* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends), direct indexing for image matching, pooling (Fisher, VLAD)
+* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
+* Advanced computer vision models 
+1. Practical indexing
+* How an index works: basic (search, add) and optional functionalities (snapshot, incremental add, remove)
+* k-NN search vs. range search 
+* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
+* Computing platform: local / service / CPU / GPU 
+1. Mathematical foundations
 
 	* Recap of relevant Linear Algebra
 	* Vector operations and notation
