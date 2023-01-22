@@ -15,29 +15,50 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 ### Generalities 
 
-Embeddings as an information bottleneck
+Embeddings as an information bottleneck. 
 We don't do end-to-end but use embeddings as an intermediate representation.
 
+Typical volumes of data and scalability. 
+embeddings are the only way to manage / access large databases
 
-Sscalability and typical volumes of data _embeddings are the only way to access large databases_
-	* the embedding contract _embedding extractor and embedding indexer agree on the semantic meaning of the distance_ 
-	* The vector space model in information retrieval
-	* Vector embeddings in machine learning
+The embedding contract 
+The embedding extractor and embedding indexer agree on the meaning of the distance
+
+The vector space model in information retrieval
+
+Vector embeddings in machine learning
 
 ### Text embeddings
 
-	* 2-layer word embeddings _word2vec and fastText_ 
-	* embedding arithmetic _king + woman - man = queen, already based on similairty search_
-	* sentence embeddings _how to train, masked LM_
-	* Large Language Models _reasoning as an emerging property of a LM and what happens when training set = the whole web_
+2-layer word embeddings 
+Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. 
+Embedding arithmetic: king + woman - man = queen, which is already based on similairty search
+
+Sentence embeddings: How to train, masked LM.
+Properties of sentence embeddings
+
+Large Language Models: reasoning as an emerging property of a LM and what happens when training set = the whole web
 
 ### Image embeddings 
 
-	* Pixel structures of images _early works on pixel indexing_
-	* Traditional CV models _GIST, local descriptors + pooling_
-	* Convolutional Neural Nets _from off-the-shelf to distance trained_ 
-	* Advanced computer vision models 
-	
+Pixel structures of images. Early works on pixel indexing
+
+Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends), direct indexing for image matching, pooling (Fisher, VLAD)
+
+Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
+
+Advanced computer vision models 
+
+### Practical indexing
+
+How an index works: basic and optional functionalities 
+
+Criteria: Speed / accuracy / memory usage / updateability / index construction time 
+
+Computing platform: local / service / CPU / GPU 
+
+k-NN search vs. range search 
+
 ### Mathematical foundations
 
 	* Recap of relevant Linear Algebra
@@ -68,20 +89,53 @@ Sscalability and typical volumes of data _embeddings are the only way to access 
 	
 ### Clustering
 
-	* k-means
-	* k-means++
-	* k-means and PCA
-	
-### Quantization
+Semantic clustering: properties (purity, as aid for annotation)
 
-	* Optimality conditions _Lloyd's conditions 
-	* Hamming encoding
-	* Clustering Based Quantization  
+Clustering from a similarity graph (spectral clustering)
+
+Vector clustering: mean squared error
+
+Relationship between vector clustering and quantization (OOD extension) 
+
+### Vector quantization 
+
+Lloyd's optimality conditions. 
+
+The k-means algorithm 
+
+Exact k-means?
+
+Initialization strategies (kmeans++, progressive dimensions with PCA)
 	
+### Quantization for lossy vector compression
+
+Vector quantization is a topline (directly optimizes the objective)
+
+Binary quantization and hamming comparison 
+
+Product quantization. Chunked vector quantization. Optimized vector quantization
+
+Additive quantization. Extension of product quantization. Difficult to train: approximations (Residual quantization, CQ, TQ, LSQ, etc.)
+
+### Non-exhaustive search 
+
+The bag-of-visual-words inspiration. 
+
+Voronoi diagram 
+
+The inverted file model. 
+
+Cost of coarse quantization vs. inverted list scanning 
+
 ### Graph based indexes
 
-	* Neighborhood graphs
-	* HNSW
+Early works: hierarchical k-means 
+
+Neighborhood graphs. How to construct them. NNdescent. 
+
+Greedy search in Neighborhood graphs. That does not work -- need shortcuts. 
+
+HNSW. A practical incremental graph-based index
 	
 ### Advanced topics
 
