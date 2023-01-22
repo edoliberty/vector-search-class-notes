@@ -9,9 +9,19 @@ The course Vector Search is given in Princeton Fall semester 2023 by
 The course covers the core concepts, algorithms, and data structures used for modern vector search systems and platforms. An advanced undergraduate or graduate student with some hands-on experience in linear algebra, probability, algorithms, and data structures should be able to follow this course.
 
 
+## Abstract
+
+Vector search is a fundamental tool for systems that manipulate large collections of media: search engines, knowledge bases, content moderation tools, recommendation systems, etc.
+The discipline lays at the intersection of Artificial Intelligence and Database management systems. 
+This course will cover the scientific foundations and practical implementation of vector search systems. 
+It will cover the feature extraction from input media, the fundamental algorithms (clustering, quantization, hashing), major vector indexing methods with their tradeoffs.
+The course will be evaluated with an exam and a project. 
+
+
 ## Syllabus
 
 **The class contents below are tentative.**
+
 
 1. Generalities 
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation.
@@ -99,7 +109,7 @@ The course covers the core concepts, algorithms, and data structures used for mo
 	* Using co-processors (GPUs).
 	* Using a hierachy of memory types (RAM + SSD or RAM + GPU RAM).
 
-1. Advanced topics
+1. Advanced topics -- articles to be presented by students
 	* Vectors in Generative AI 
 	* Neural quantization 
 	* Vector Databases 
