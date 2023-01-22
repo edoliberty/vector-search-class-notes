@@ -14,114 +14,92 @@ The course covers the core concepts, algorithms, and data structures used for mo
 **The class contents below are tentative.**
 
 1. Generalities 
-- Embeddings as an information bottleneck. We don't do end-to-end but use embeddings as an intermediate representation.
-- Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
-- The embedding contract. The embedding extractor and embedding indexer agree on the meaning of the distance
-- The vector space model in information retrieval
-- Vector embeddings in machine learning
+	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation.
+	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
+	* The embedding contract. The embedding extractor and embedding indexer agree on the meaning of the distance
+	* The vector space model in information retrieval
+	* Vector embeddings in machine learning
+	
 1. Text embeddings
-- 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. Embedding arithmetic: king + woman - man = queen, which is already based on similairty search
-- Sentence embeddings: How to train, masked LM. Properties of sentence embeddings
-- Large Language Models: reasoning as an emerging property of a LM and what happens when training set = the whole web
-1. Image embeddings 
-* Pixel structures of images. Early works on pixel indexing
-* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends), direct indexing for image matching, pooling (Fisher, VLAD)
-* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
-* Advanced computer vision models 
-1. Practical indexing
-* How an index works: basic (search, add) and optional functionalities (snapshot, incremental add, remove)
-* k-NN search vs. range search 
-* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
-* Computing platform: local / service / CPU / GPU 
-1. Mathematical foundations
+	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. Embedding arithmetic: king + woman - man = queen, which is already based on similairty search
+	* Sentence embeddings: How to train, masked LM. Properties of sentence embeddings
+	* Large Language Models: reasoning as an emerging property of a LM and what happens when training set = the whole web
 
+1. Image embeddings 
+	* Pixel structures of images. Early works on pixel indexing
+	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends), direct indexing for image matching, pooling (Fisher, VLAD)
+	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
+	* Advanced computer vision models 
+
+1. Practical indexing
+	* How an index works: basic (search, add) and optional functionalities (snapshot, incremental add, remove)
+	* k-NN search vs. range search 
+	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
+	* Computing platform: local / service / CPU / GPU 
+
+1. Mathematical foundations
 	* Recap of relevant Linear Algebra
 	* Vector operations and notation
-	* Probabilistic inequalities
-	
-### Low dimensional vector search 
+	* Probabilistic inequalities	
 
+1. Low dimensional vector search 
 	* k-d tree
 	* Concentration phenomena
 	* Curse of dimensionality
-	
-### Dimensionality Reduction I
 
+1. Dimensionality Reduction I
 	* Principal Components Analysis 
 	* Fast PCA algorithms 
-	
-### Dimensionality Reduction II
 
+1. Dimensionality Reduction II
 	* Random Projections
-	* Fast Random Projections
-	
-### Locality Sensitive Hashing
+	* Fast Random Projections	
 
+1. Locality Sensitive Hashing
 	* Definition of ANN
 	* LSH Algorithm
 	* LSH Analysis
 	
-### Clustering
+1. Clustering
+	* Semantic clustering: properties (purity, as aid for annotation)
+	* Clustering from a similarity graph (spectral clustering)
+	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
+	* Relationship between vector clustering and quantization (OOD extension) 
 
-Semantic clustering: properties (purity, as aid for annotation)
-
-Clustering from a similarity graph (spectral clustering)
-
-Vector clustering: mean squared error
-
-Relationship between vector clustering and quantization (OOD extension) 
-
-### Vector quantization 
-
-Lloyd's optimality conditions. 
-
-The k-means algorithm 
-
-Exact k-means?
-
-Initialization strategies (kmeans++, progressive dimensions with PCA)
+1. Vector quantization 
+	* Lloyd's optimality conditions. 
+	* The k-means algorithm 
+	* Exact k-means 
+	* Initialization strategies (kmeans++, progressive dimensions with PCA)
 	
-### Quantization for lossy vector compression
+1. Quantization for lossy vector compression
+	* Vector quantization is a topline (directly optimizes the objective)
+	* Binary quantization and hamming comparison 
+	* Product quantization. Chunked vector quantization. Optimized vector quantization
+	* Additive quantization. Extension of product quantization. Difficult to train: approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 
-Vector quantization is a topline (directly optimizes the objective)
+1. Non-exhaustive search 
+	* The bag-of-visual-words inspiration. 
+	* Voronoi diagram with search buckets.
+	* The inverted file model. 
+	* Cost of coarse quantization vs. inverted list scanning. 
 
-Binary quantization and hamming comparison 
-
-Product quantization. Chunked vector quantization. Optimized vector quantization
-
-Additive quantization. Extension of product quantization. Difficult to train: approximations (Residual quantization, CQ, TQ, LSQ, etc.)
-
-### Non-exhaustive search 
-
-The bag-of-visual-words inspiration. 
-
-Voronoi diagram 
-
-The inverted file model. 
-
-Cost of coarse quantization vs. inverted list scanning 
-
-### Graph based indexes
-
-Early works: hierarchical k-means 
-
-Neighborhood graphs. How to construct them. NNdescent. 
-
-Greedy search in Neighborhood graphs. That does not work -- need shortcuts. 
-
-HNSW. A practical incremental graph-based index
+1. Graph based indexes
+	* Early works: hierarchical k-means 
+	* Neighborhood graphs. How to construct them. NNdescent. 
+	* Greedy search in Neighborhood graphs. That does not work -- need shortcuts. 
+	* HNSW. A practical hierarchical graph-based index
 	
-### Advanced topics
-
+1. Advanced topics
 	* Vectors in Generative AI 
 	* Neural quantization 
 	* Vector Databases 
 	
-### Project setup
+1. Project setup
 
-### Office hours for project work
+1. Office hours for project work
 
-### Project Presentations
+1. Project Presentations
 
 
 ## Build
