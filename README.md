@@ -11,16 +11,22 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 ### Syllabus
 
-1. Introduction to vector search
+**The class contents below are tentative.**
+
+1. Text embeddings 
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
-	* Recsys
-	* Vectors in Generative AI
+	* Large Language Models
+1. Image embeddings 
+	* Pixel structures of images
+	* Traditional CV models 
+	* Convolutional Neural Nets
+	* Advanced computer vision models
 1. Foundations
 	* Recap of relevant Linear Algebra
 	* Vector operations and notation
 	* Probabilistic inequalities
-1. Low dimensions
+1. Low dimensional vector search 
 	* k-d tree
 	* Concentration phenomena
 	* Curse of dimensionality
@@ -44,15 +50,13 @@ The course covers the core concepts, algorithms, and data structures used for mo
 1. Graph based indexes
 	* Neighborhood graphs
 	* HNSW
-1. TBD advanced topic
-1. TBD advanced topic
-1. TBD advanced topic 
-
-
-
-
-
-
+1. Advanced topics
+	* Vectors in Generative AI 
+	* Neural quantization 
+	* Vector Databases 
+1. Project setup
+1. Office hours for project work
+1. Project Presentations
 
 
 ### Build
