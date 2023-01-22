@@ -93,9 +93,11 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 1. Practical indexing 
 	* maintaining top-k results 
+	* efficient implementation of brute force search
 	* distance computations for product quantization -- tradeoffs. SIMD implementaion
 	* Parallelization and distribution -- sharding vs. inverted list distribution.
 	* Using co-processors (GPUs).
+	* Using a hierachy of memory types (RAM + SSD or RAM + GPU RAM).
 
 1. Advanced topics
 	* Vectors in Generative AI 
