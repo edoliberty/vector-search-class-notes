@@ -123,27 +123,25 @@ The course will be evaluated with an exam and a project.
 
 ## Selected literature 
 
-* The product quantization (PQ) method from [“Product quantization for nearest neighbor search”](https://hal.inria.fr/inria-00514462v2/document), Jégou & al., PAMI 2011. This can be seen as a lossy compression technique for high-dimensional vectors, that allows relatively accurate reconstructions and distance computations in the compressed domain.
+* Product quantization (PQ) and inverted file: [“Product quantization for nearest neighbor search”](https://hal.inria.fr/inria-00514462v2/document), Jégou & al., PAMI 2011. 
 
-* The optimized PQ from [“Optimized product quantization”](http://ieeexplore.ieee.org/abstract/document/6678503/), He & al, CVPR 2013. This method can be seen as a linear transformation of the vector space to make it more amenable for indexing with a product quantizer.
+* Fast k-selection on wide SIMD architectures: [“Billion-scale similarity search with GPUs”](https://arxiv.org/abs/1702.08734), Johnson & al, ArXiv 1702.08734, 2017 
 
-* The GPU implementation and fast k-selection is described in [“Billion-scale similarity search with GPUs”](https://arxiv.org/abs/1702.08734), Johnson & al, ArXiv 1702.08734, 2017 
+* HNSW indexing method: ["Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs"](https://arxiv.org/abs/1603.09320), Malkov & al., ArXiv 1603.09320, 2016
 
-* The HNSW indexing method from ["Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs"](https://arxiv.org/abs/1603.09320), Malkov & al., ArXiv 1603.09320, 2016
+* In-register vector comparisons: ["Quicker ADC : Unlocking the Hidden Potential of Product Quantization with SIMD"](https://arxiv.org/abs/1812.09162), André et al, PAMI'19, also used in ["Accelerating Large-Scale Inference with Anisotropic Vector Quantization"](https://arxiv.org/abs/1908.10396), Guo, Sun et al, ICML'20.
 
-* The in-register vector comparisons from ["Quicker ADC : Unlocking the Hidden Potential of Product Quantization with SIMD"](https://arxiv.org/abs/1812.09162), André et al, PAMI'19, also used in ["Accelerating Large-Scale Inference with Anisotropic Vector Quantization"](https://arxiv.org/abs/1908.10396), Guo, Sun et al, ICML'20.
+* Graph-based indexing method NSG: ["Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph"](https://arxiv.org/abs/1707.00143), Cong Fu et al, VLDB 2019.
 
-* The graph-based indexing method NSG from ["Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph"](https://arxiv.org/abs/1707.00143), Cong Fu et al, VLDB 2019.
+* Local search quantization (an additive quantization method): ["Revisiting additive quantization"](https://drive.google.com/file/d/1dDuv6fQozLQFS2AJoNNFGTH499QIp_vO/view), Julieta Martinez, et al. ECCV 2016 and ["LSQ++: Lower running time and higher recall in multi-codebook quantization"](https://openaccess.thecvf.com/content_ECCV_2018/html/Julieta_Martinez_LSQ_lower_runtime_ECCV_2018_paper.html), Julieta Martinez, et al. ECCV 2018.
 
-* The Local search quantization method from ["Revisiting additive quantization"](https://drive.google.com/file/d/1dDuv6fQozLQFS2AJoNNFGTH499QIp_vO/view), Julieta Martinez, et al. ECCV 2016 and ["LSQ++: Lower running time and higher recall in multi-codebook quantization"](https://openaccess.thecvf.com/content_ECCV_2018/html/Julieta_Martinez_LSQ_lower_runtime_ECCV_2018_paper.html), Julieta Martinez, et al. ECCV 2018.
+* Learning-based quantizer: ["Unsupervised Neural Quantization for Compressed-Domain Similarity Search"](https://openaccess.thecvf.com/content_ICCV_2019/html/Morozov_Unsupervised_Neural_Quantization_for_Compressed-Domain_Similarity_Search_ICCV_2019_paper.html), Morozov and Banenko, ICCV'19
 
-* The learning based quantizer from ["Unsupervised Neural Quantization for Compressed-Domain Similarity Search"](https://openaccess.thecvf.com/content_ICCV_2019/html/Morozov_Unsupervised_Neural_Quantization_for_Compressed-Domain_Similarity_Search_ICCV_2019_paper.html), Morozov and Banenko, ICCV'19
+* Neural indexing: ["Transformer Memory as a Differentiable Search Index"](https://arxiv.org/abs/2202.06991), Tan & al. ArXiV'22
 
-* Neural indexing from ["Transformer Memory as a Differentiable Search Index"](https://arxiv.org/abs/2202.06991), Tan & al. ArXiV'22
+* The hybrid RAM-disk index: ["Diskann: Fast accurate billion-point nearest neighbor search on a single node"](https://proceedings.neurips.cc/paper/2019/hash/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Abstract.html), Subramanya & al. NeurIPS'19
 
-* The hybrid RAM-disk index from ["Diskann: Fast accurate billion-point nearest neighbor search on a single node"](https://proceedings.neurips.cc/paper/2019/hash/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Abstract.html), Subramanya & al. NeurIPS'19
-
-* The nearest neighbor descent method from [Efficient k-nearest neighbor graph construction for generic similarity measures](https://www.ambuehler.ethz.ch/CDstore/www2011/proceedings/p577.pdf) from Dong et al., WWW'11
+* The nearest neighbor descent method: [Efficient k-nearest neighbor graph construction for generic similarity measures](https://www.ambuehler.ethz.ch/CDstore/www2011/proceedings/p577.pdf) from Dong et al., WWW'11
 
 ## Build
 
