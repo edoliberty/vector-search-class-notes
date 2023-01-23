@@ -5,7 +5,6 @@ The course Vector Search is given in Princeton Fall semester 2023 by
 
 * [Matthijs Douze](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en]) the creator and lead maintainer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search.
 
-
 The course covers the core concepts, algorithms, and data structures used for modern vector search systems and platforms. An advanced undergraduate or graduate student with some hands-on experience in linear algebra, probability, algorithms, and data structures should be able to follow this course.
 
 
@@ -22,104 +21,89 @@ The course will be evaluated with an exam and a project.
 
 **The class contents below are tentative.**
 
-1. Generalities 
-	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation.
-	* Advantages: scalability, instant updates, explainability.
-	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases.
-	* The embedding contractL: the embedding extractor and embedding indexer agree on the meaning of the distance. Separation of concerns.
+1. Introduction to Vector Search 
+	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
+	* Advantages: scalability, instant updates, and explainability
+	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
+	* The embedding contract: the embedding extractor and embedding indexer agree on the meaning of the distance. Separation of concerns.
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
 	
 1. Text embeddings
-	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-ocurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similairty search).
+	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-occurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similarity search)
 	* Sentence embeddings: How to train, masked LM. Properties of sentence embeddings.
-	* Large Language Models: reasoning as an emerging property of a LM. What happens when training set = the whole web.
+	* Large Language Models: reasoning as an emerging property of a LM. What happens when the training set = the whole web
 
 1. Image embeddings 
-	* Pixel structures of images. Early works on direct pixel indexing.
-	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends). Direct indexing of local descriptors for image matching, local descriptor pooling (Fisher, VLAD).
-	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (constrastive learning, self-supervised learning). 
-	* Advanced computer vision models 
+	* Pixel structures of images. Early works on direct pixel indexing
+	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends)Direct indexing of local descriptors for image matching, local descriptor pooling (Fisher, VLAD)
+	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
+	* Modern Computer Vision models 
 
 1. Practical indexing
-	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove.
+	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove
 	* k-NN search vs. range search 
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
 	* Computing platform: local vs. service / CPU vs. GPU 
+	* Early works on bag-of-visual-words inspiration, based on quantization
+	* Voronoi diagram with search buckets
+	
+1. Low Dimensional Vector Search 
+	* k-d tree, space partitioning based algorithms, proof, structures, and asymptotic behavior
+	* Probabilistic inequalities. Recap of basic inequalities: Markov, Chernoof, Hoeffding
+	* Concentration Of Measure phenomena. Orthogonality of random vectors
+	* Curse of dimensionality. The failure of space partitioning
 
-1. Mathematical foundations
-	* Recap of relevant Linear Algebra
-	* Vector operations and notation
-	* Probabilistic inequalities	
-
-1. Low dimensional vector search 
-	* k-d tree
-	* Concentration phenomena
-	* Curse of dimensionality
-
-1. Dimensionality Reduction I
-	* Principal Components Analysis 
+1. Dimensionality Reduction
+	* Principal Components Analysis, optimal dimension reduction in the sum of squared distance measure
 	* Fast PCA algorithms 
-
-1. Dimensionality Reduction II
-	* Random Projections
-	* Fast Random Projections	
+	* Random Projections. Gaussian random i.i.d. dimension reduction 
+	* Fast Random Projections. Accelerating the above to near linear time
 
 1. Locality Sensitive Hashing
-	* Definition of ANN
-	* LSH Algorithm
-	* LSH Analysis
+	* Definition of Approximate Nearest Neighbor Search (ANNS)
+	* Definition of Locality Sensitive Hashing and examples
+	* The LSH Algorithm
+	* LSH Analysis, proof of correctness, and asymptotics
 	
 1. Clustering
 	* Semantic clustering: properties (purity, as aid for annotation)
 	* Clustering from a similarity graph (spectral clustering, agglomerative clustering)
 	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
 	* Relationship between vector clustering and quantization (OOD extension) 
-
-1. Vector quantization 
-	* Lloyd's optimality conditions. 
-	* The k-means algorithm 
-	* Exact k-means 
+	* The k-means clustering measure and Lloyd's algorithm
+	* Lloyd's optimality conditions
 	* Initialization strategies (kmeans++, progressive dimensions with PCA)
+	* The inverted file model. Relationship with sparse matrices
 	
 1. Quantization for lossy vector compression
 	* Vector quantization is a topline (directly optimizes the objective)
 	* Binary quantization and hamming comparison 
-	* Product quantization. Chunked vector quantization. Optimized vector quantization.
-	* Additive quantization. Extension of product quantization. Difficult to train: approximations (Residual quantization, CQ, TQ, LSQ, etc.)
-
-1. Non-exhaustive search 
-	* Early works on bag-of-visual-words inspiration, based on quantization. 
-	* Voronoi diagram with search buckets.
-	* The inverted file model. Relationship with sparse matrices.
-	* Cost of coarse quantization vs. inverted list scanning. 
+	* Product quantization. Chunked vector quantization. Optimized vector quantization
+	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
+	* Cost of coarse quantization vs. inverted list scanning
 
 1. Graph based indexes
 	* Early works: hierarchical k-means 
-	* Neighborhood graphs. How to construct them. nearest neighbor descent. 
-	* Greedy search in Neighborhood graphs. That does not work -- need long jumps. 
-	* HNSW. A practical hierarchical graph-based index.
-	* NSG. Evolving a graph k-NN graph.
+	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
+	* Greedy search in Neighborhood graphs. That does not work -- need long jumps
+	* HNSW. A practical hierarchical graph-based index
+	* NSG. Evolving a graph k-NN graph
 
 1. Practical indexing 
-	* maintaining top-k results 
+	* maintaining top-k results
 	* efficient implementation of brute force search
-	* distance computations for product quantization -- tradeoffs. SIMD implementaion
-	* Parallelization and distribution -- sharding vs. inverted list distribution.
-	* Using co-processors (GPUs).
-	* Using a hierachy of memory types (RAM + SSD or RAM + GPU RAM).
+	* distance computations for product quantization -- tradeoffs. SIMD implementation
+	* Parallelization and distribution -- sharding vs. inverted list distribution
+	* Using co-processors (GPUs)
+	* Using a hierarchy of memory types (RAM + SSD or RAM + GPU RAM)
 
 1. Advanced topics -- articles to be presented by students
 	* Vectors in Generative AI 
 	* Neural quantization 
 	* Vector Databases 
-	* Beyond feature extraction and indexing: neural indexing 
+	* Beyond feature extraction and indexing: neural indexing
 	
-1. Project setup
-
-1. Office hours for project work
-
-1. Project Presentations
 
 ## Selected literature 
 
