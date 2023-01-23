@@ -43,8 +43,8 @@ The course will be evaluated with an exam and a project.
 1. Practical indexing
 	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove
 	* k-NN search vs. range search 
+	* maintaining top-k results
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
-	* Computing platform: local vs. service / CPU vs. GPU 
 	* Early works on bag-of-visual-words inspiration, based on quantization
 	* Voronoi diagram with search buckets
 	
@@ -90,8 +90,8 @@ The course will be evaluated with an exam and a project.
 	* HNSW. A practical hierarchical graph-based index
 	* NSG. Evolving a graph k-NN graph
 
-1. Practical indexing 
-	* maintaining top-k results
+1. Computing Hardware and Vector Search
+	* Computing platform: local vs. service / CPU vs. GPU 
 	* efficient implementation of brute force search
 	* distance computations for product quantization -- tradeoffs. SIMD implementation
 	* Parallelization and distribution -- sharding vs. inverted list distribution
