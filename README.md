@@ -1,5 +1,5 @@
-# Vector Search
-The course Vector Search is given in Princeton Fall semester 2023 by
+# Long Term Memory in AI - Vector Search and Databases
+COS 495 is given at Princeton during the Fall semester 2023 by
 
 * [Edo Liberty](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en), the Founder and CEO of [Pinecone](www.pinecone.io), the world's leading Vector Database.
 
@@ -9,12 +9,7 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 
 ## Abstract
-
-Vector search is a fundamental tool for systems that manipulate large collections of media: search engines, knowledge bases, content moderation tools, recommendation systems, etc.
-The discipline lays at the intersection of Artificial Intelligence and Database Management Systems. 
-This course will cover the scientific foundations and practical implementation of vector search systems. 
-It will cover the feature extraction from input media, the fundamental algorithms (clustering, quantization, hashing), major vector indexing methods with their tradeoffs and touch upon their use cases.
-The course will be evaluated with an exam and a project. 
+Long Term Memory is a fundamental capability in the modern AI Stack. At their core, these systems are using Vector search. Vector search is also a fundamental tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the scientific foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
 
 
 ## Syllabus
@@ -40,15 +35,9 @@ The course will be evaluated with an exam and a project.
 	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
 	* Modern Computer Vision models 
 
-1. Practical indexing
-	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove
-	* k-NN search vs. range search 
-	* maintaining top-k results
-	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
-	* Early works on bag-of-visual-words inspiration, based on quantization
-	* Voronoi diagram with search buckets
 	
 1. Low Dimensional Vector Search 
+	* Exact vecrtor search
 	* k-d tree, space partitioning based algorithms, proof, structures, and asymptotic behavior
 	* Probabilistic inequalities. Recap of basic inequalities: Markov, Chernoof, Hoeffding
 	* Concentration Of Measure phenomena. Orthogonality of random vectors
@@ -62,6 +51,7 @@ The course will be evaluated with an exam and a project.
 
 1. Locality Sensitive Hashing
 	* Definition of Approximate Nearest Neighbor Search (ANNS)
+	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
 	* Definition of Locality Sensitive Hashing and examples
 	* The LSH Algorithm
 	* LSH Analysis, proof of correctness, and asymptotics
@@ -104,7 +94,9 @@ The course will be evaluated with an exam and a project.
 	* Vector Databases 
 	* Beyond feature extraction and indexing: neural indexing
 	
+1. In class project presentations
 
+ 
 ## Selected literature 
 
 * Product quantization (PQ) and inverted file: [“Product quantization for nearest neighbor search”](https://hal.inria.fr/inria-00514462v2/document), Jégou & al., PAMI 2011. 
