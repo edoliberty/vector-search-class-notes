@@ -21,7 +21,7 @@ The course will be evaluated with an exam and a project.
 
 **The class contents below are tentative.**
 
-1. Introduction to Vector Search 
+1. Introduction to Vector Search [Matthijs]
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
 	* Advantages: scalability, instant updates, and explainability
 	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
@@ -29,18 +29,18 @@ The course will be evaluated with an exam and a project.
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
 	
-1. Text embeddings
+1. Text embeddings [Matthijs]
 	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-occurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similarity search)
 	* Sentence embeddings: How to train, masked LM. Properties of sentence embeddings.
 	* Large Language Models: reasoning as an emerging property of a LM. What happens when the training set = the whole web
 
-1. Image embeddings 
+1. Image embeddings [Matthijs] 
 	* Pixel structures of images. Early works on direct pixel indexing
 	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends)Direct indexing of local descriptors for image matching, local descriptor pooling (Fisher, VLAD)
 	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
 	* Modern Computer Vision models 
 
-1. Practical indexing
+1. Practical indexing [Matthijs?]
 	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove
 	* k-NN search vs. range search 
 	* maintaining top-k results
@@ -48,25 +48,25 @@ The course will be evaluated with an exam and a project.
 	* Early works on bag-of-visual-words inspiration, based on quantization
 	* Voronoi diagram with search buckets
 	
-1. Low Dimensional Vector Search 
+1. Low Dimensional Vector Search [Edo?] 
 	* k-d tree, space partitioning based algorithms, proof, structures, and asymptotic behavior
 	* Probabilistic inequalities. Recap of basic inequalities: Markov, Chernoof, Hoeffding
 	* Concentration Of Measure phenomena. Orthogonality of random vectors
 	* Curse of dimensionality. The failure of space partitioning
 
-1. Dimensionality Reduction
+1. Dimensionality Reduction [Edo?]
 	* Principal Components Analysis, optimal dimension reduction in the sum of squared distance measure
 	* Fast PCA algorithms 
 	* Random Projections. Gaussian random i.i.d. dimension reduction 
 	* Fast Random Projections. Accelerating the above to near linear time
 
-1. Locality Sensitive Hashing
+1. Locality Sensitive Hashing [Edo?]
 	* Definition of Approximate Nearest Neighbor Search (ANNS)
 	* Definition of Locality Sensitive Hashing and examples
 	* The LSH Algorithm
 	* LSH Analysis, proof of correctness, and asymptotics
 	
-1. Clustering
+1. Clustering [Edo?]
 	* Semantic clustering: properties (purity, as aid for annotation)
 	* Clustering from a similarity graph (spectral clustering, agglomerative clustering)
 	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
@@ -76,21 +76,21 @@ The course will be evaluated with an exam and a project.
 	* Initialization strategies (kmeans++, progressive dimensions with PCA)
 	* The inverted file model. Relationship with sparse matrices
 	
-1. Quantization for lossy vector compression
+1. Quantization for lossy vector compression [Matthijs?]
 	* Vector quantization is a topline (directly optimizes the objective)
 	* Binary quantization and hamming comparison 
 	* Product quantization. Chunked vector quantization. Optimized vector quantization
 	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 	* Cost of coarse quantization vs. inverted list scanning
 
-1. Graph based indexes
+1. Graph based indexes [Harsha?]
 	* Early works: hierarchical k-means 
 	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps
 	* HNSW. A practical hierarchical graph-based index
 	* NSG. Evolving a graph k-NN graph
 
-1. Computing Hardware and Vector Search
+1. Computing Hardware and Vector Search [?]
 	* Computing platform: local vs. service / CPU vs. GPU 
 	* efficient implementation of brute force search
 	* distance computations for product quantization -- tradeoffs. SIMD implementation
@@ -98,7 +98,7 @@ The course will be evaluated with an exam and a project.
 	* Using co-processors (GPUs)
 	* Using a hierarchy of memory types (RAM + SSD or RAM + GPU RAM)
 
-1. Advanced topics -- articles to be presented by students
+1. Advanced topics -- articles to be presented by students [all]
 	* Vectors in Generative AI 
 	* Neural quantization 
 	* Vector Databases 
