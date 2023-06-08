@@ -17,12 +17,14 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 **The class contents below are tentative.**
 
 1. Introduction to Vector Search [Matthijs]
+	* 1/2h of intro to the course (w/ Edo)
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
 	* Advantages: scalability, instant updates, and explainability
 	* Typical volumes of data and scalability. Embeddings are the only way to manage / access large databases
 	* The embedding contract: the embedding extractor and embedding indexer agree on the meaning of the distance. Separation of concerns.
 	* The vector space model in information retrieval
 	* Vector embeddings in machine learning
+	* Define vector, vector search, ranking -- retrieval -- recall
 	
 1. Text embeddings [Matthijs]
 	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-occurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similarity search)
@@ -35,7 +37,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
 	* Modern Computer Vision models 
 
-1. Practical indexing [Matthijs]
+1. Practical indexing [Edo]
 	* How an index works: basic functionalities (search, add). Optional functionalities: snapshot, incremental add, remove
 	* k-NN search vs. range search 
 	* maintaining top-k results
