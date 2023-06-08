@@ -1,5 +1,5 @@
 # Long Term Memory in AI - Vector Search and Databases
-COS 495 is given at Princeton during the Fall semester 2023 by
+COS 597A is given at Princeton during the Fall semester 2023 by
 
 * [Edo Liberty](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database.
 
