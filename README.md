@@ -61,7 +61,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 
 1. 10/20 - No Class - Fall Recess
 
-1. 10/27 - Class 6 - LApproximate Nearest Neighbor Search [Edo]
+1. 10/27 - Class 6 - Approximate Nearest Neighbor Search [Edo]
 	* Definition of Approximate Nearest Neighbor Search (ANNS)
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
 	* Definition of Locality Sensitive Hashing and examples
