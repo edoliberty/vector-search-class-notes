@@ -93,7 +93,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* NSG. Evolving a graph k-NN graph	
 
 
-1. 11/10 - Class 8 - Computing Hardware and Vector Search [Guest lecture]
+1. 11/10 - Class 10 - Computing Hardware and Vector Search [Guest lecture]
 	* Computing platform: local vs. service / CPU vs. GPU 
 	* efficient implementation of brute force search
 	* distance computations for product quantization -- tradeoffs. SIMD implementation
@@ -102,11 +102,11 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Using a hierarchy of memory types (RAM + SSD or RAM + GPU RAM)
 
 
-1. 11/17 - Class 9 - Student project and paper presentations [Edo]
+1. 11/17 - Class 11- Student project and paper presentations [Edo]
 
 1. 11/24 - No Class - Thanksgiving Recess
 
-1. 12/1 - Class 10 - Student project and paper presentations [Edo]
+1. 12/1 - Class 12 - Student project and paper presentations [Edo]
 
 
  
