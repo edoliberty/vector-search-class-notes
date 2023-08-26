@@ -5,69 +5,75 @@
 \lecturetitle{Class 4 - Low Dimensional Vector Search}
 \section{Nearest Neighbor Search Definition}
 
-As we have seen, nearest neighbor search is a fundamental computational building block in computer vision, graphics, data mining, machine learning, and many other sub-fields.
+As we have seen, nearest neighbor search is a fundamental computational building block in computer vision, semantic search, data mining, machine learning, and many other applications.
 
 \begin{definition}{\bf Nearest Neighbor Search:} Given a set of points $X = \{x_1,\ldots,x_n\} \in \R^{d}$ 
 preprocess them into a data structure of size $\poly(n,d)$ in time $\poly(n,d)$ such that nearest neighbor queries can
-be performed. Given a search query point $q$ a radius $r$ and the data structure one can 
-return $X_{q,r} - \{i | ||q - x_i || \le r \}$. 
+be performed. Given a search query point $q$ a radius $r$ and the data structure should return  
+return $X_{q,r} = \{i \;\; | \;\; ||q - x_i || \le r \}$. 
 \end{definition}
+We will later extent this definition in the obvious way to max-inner-product search (MIPS) and cosine similarity search.
 Improving the practical and theoretical asymptotic time complexity for computing $X_{q,r}$ is the topic of this class.
 
 \begin{center}
-\includegraphics[width=0.5\textwidth]{images/nnsearch.png}
+\includegraphics[width=1.0\textwidth]{images/vectorsearch.png}
 \end{center}
 
-One option is have is to do nothing at the preprocessing stage. Then, at query time, scan the data points and find those which minimize $\|q - x_i\|$.
+One option we have is to do nothing at the preprocessing stage. Then, at query time, scan the data points and find those which minimize $\|q - x_i\|$.
 This would give a query time of $\Omega(nd)$. But, of course, it would be significantly better if we could reduce the dependence on $n$, or in other words, avoid scanning the data for every query point.
 
 \section{kd-trees}
 First, we shall review a well known an widely used algorithm for this problem which is called kd-trees \cite{Bentley75}.
-The data structure holds the points in a tree. 
-Each subtree contains all the points in an axis aligned bounding box (maybe infinite).
-In each depth in the tree the bounding boxes are split along an axis (in a round robin order) at the median value of the points in the box.
-Splitting stops when the number of points in the box is sufficiently small, say one. 
+The data structure holds the points in a geometrically partitioned tree. 
+Each subtree contains all the points in an axis aligned bounding box,
+In each depth in the tree the bounding boxes are split along an axis.
+There are many different heuristics for splitting the boxes. For didactic reasons, let's consider a simple construction that lends itself to easy analysis.
+
+In our setting, we assuming the number of points is exactly a power of $2$ and that coordinate values are distinct. 
+Both assumptions are relatively harmless and should not change the asymptotic behavior. 
+
+We will organize the points in a perfectly balanced binary tree. Points will be associated only with leaves. 
+The construction of the tree is simple. We start with all points in a single box (a node in the tree) 
+We split the box in two along the first coordinate such that exactly half the points lie on each side.
+Then, do the same for each of the two resulting boxes wrt to the second coordinate.
+Then, again, for the four resulting boxes wrt to the third coordinate and so on.
+Splitting stops when there is exactly one point in each leaf.
 
 
-It is quite simple to prove that inserting and deleting points requires $O(log(n))$ time.
-Thus, the entire construction time is bounded by $O(n\log(n))$.
-
-Searching however is quite a different matter.
-Let us assume w.o.l.g.\ that all points are inside the unit cube. 
-A harmless assumption because we can scale the entire data set by a constant factor.
-Also, notice that each point in the date whose bounding box intersects the query sphere must be
-examined. Moreover, examining each data point can generate at most $O(log(n))$ computations.
-We will therefore only ask ourselves, how many point boxes have a non zero intersection with the query sphere.
-
-To make this exercise simpler, consider a simpler case and a variation of kd-trees.
-First, all $n$ data points are distributed uniformly and i.i.d. over $[0,1]^{d}$.
-Also, the space partition splits every box exactly in the middle when the cut is
-made along the axes in a round robin order.
-Note that for such random data, our simple algorithm produces a very simple partition to the
-one kd-tree would have generated since the median point is approximately also in the middle of the box.
-(this holds as long as the number of points in a box is large enough)
-
-Let's assume each box is split $t$ times (the depth of the tree is $t$). 
-That means that each axis was split in half $t/d$ (assuming $t/d$ is an integer) times.
-Therefore, the dimension of our box are $[2^{-t/d},2^{-t/d},\ldots,2^{-t/d}]$.
-What is the probability that a (randomly located) ball of radius $r$ will hit this box?
-
-This probability that the box is ``hit" by a random query sphere 
-is at most the volume of a sphere of radius $\sqrt{d}2^{-t/d-1} + r$ since 
-if the query falls outside this ball it will not intersect the box. Assume, for now, that $\sqrt{d}2^{-t/d-1} \le r$ and
-so the probability of this event is bounded by the volume of a ball of radius $2r$.
-The volume of such a ball is $\pi^{d/2}(2r)^d/(d/2)!$ (assuming, for convenience, that $d$ is even).
-The dependance on the radius is therefore $O(r^d)$. Thus, we can expect to inspect only a $O(r^d)$ fraction of the 
-boxes (and thus points). Since $r\le 1$ this can be a significant speedup.
-
-We saw that separating the space into boxes enabled us to search in it more efficiently.
-We, however, made some heavy assumptions. One such is that $\sqrt{d}2^{-t/d-1} \le r$.
-This assumption fails when the dimension grows. To see this, consider that $t \approx \log(n)$ 
-to give boxes of volume roughly $1/n$. Requiring that $\sqrt{d}2^{-\log(n)/d} \le \sqrt{d}/2$ we get that $\log(n) \ge d$ or that $n$ must be
-exponential in $d$, $n \ge 2^{d}$. Therefore, we only gain if the number of points in exponential in the dimension.
-This is a result of the so called ``curse of dimensionality'' which is discussed next.
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/kdtrees-construction.png}
+\end{center}
 
 
+When searching the tree, we should consider only points whose bounding boxes touch the query region (ball in this case).
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/kdtrees-search.png}
+\end{center}
+
+\begin{fact}
+Any axis aligned hyperplane touches at most $n^{1-1/d}$ boxes.
+\end{fact}
+\begin{proof}
+Assume the hyperplane is aligned with the $i$'th coordinate. That is, the points $x\in\R^d$ such that $x_i = c$. 
+When splitting according to coordinate $i$, the split value is either larger or smaller than $c$. 
+When that happens, the hyperplane only touches one of the two nodes a level lower in the tree.
+The result is that, a splitting according to $i$'s coordinate cuts the number of touched leaf boxes (points) by half.
+Finally, since we cycle through the coordinated in a round robin fashion, each coordinate is used for splitting $log_2(n)/d$ times.
+Note that $log_2(n)$ is the depth of the tree. We can now calculate the number of touched leaf boxes by $n (1/2)^{log_2(n)/d} = n^{1-1/d}$.
+\end{proof}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/kdtrees-proof.png}
+\end{center}
+
+To complete the analysis, note that the axis aligned bounding box of the query has $2d$ facets. Therefore, the number of touched cells is $O(dn^{1-1/d})$.
+For each touched cell we need to decide whether the associated point is a valid search result which takes $O(d)$ operations. 
+The resulting search complexity of the algorithm is $O(d^2n^{1-1/d})$ which is sub-linear in $n$.
+While this analysis is rather simple it it actually cannot be made much better  \cite{kdtree-worstcase}. There are many variants of this algorithm \cite{rptrees} and practical observations that claim kd-trees perform well in low dimensions. 
+
+Nevertheless, this runtime is only better than the brute force solution of $O(nd)$ when $n > d^d$ which already hints that there might be a problem with high dimensions.
+Before introducing the source of the problem, we should cover some basic facts about random variables. Facts that will serve us for the rest of the course.
 
 
 \section{Probability Tools and Facts Recap}
