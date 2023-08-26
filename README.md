@@ -44,12 +44,12 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 
 
 1. 9/29 - Class 4 - Low Dimensional Vector Search [Edo]
-	* Vector search algorithms, basic requirments 
-	* Voronoi diagram with search buckets
-	* k-d tree, space partitioning based algorithms, proof, structures, and asymptotic behavior
+	* Vector search problem definition 
+	* k-d tree, space partitioning data structures
+	* Worst case proof for kd-trees
 	* Probabilistic inequalities. Recap of basic inequalities: Markov, Chernoof, Hoeffding
 	* Concentration Of Measure phenomena. Orthogonality of random vectors in high dimensions
-	* Curse of dimensionality and the failure of space partitioning.
+	* Curse of dimensionality and the failure of space partitioning
 
 1. 10/6 - Class 5 - Dimensionality Reduction [Edo] 
 	* Principal Components Analysis, optimal dimension reduction in the sum of squared distance measure
