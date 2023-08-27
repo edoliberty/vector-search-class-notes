@@ -1,8 +1,6 @@
 \documentclass{article}
 \usepackage{vs}
 
-\usepackage{wrapfig}
-
 \begin{document}
 
 
@@ -14,10 +12,10 @@ As we have seen, nearest neighbor search is a fundamental computational building
 
 \begin{definition}{\bf Nearest Neighbor Search:} Given a set of points $X = \{x_1,\ldots,x_n\} \in \R^{d}$ 
 preprocess them into a data structure of size $\poly(n,d)$ in time $\poly(n,d)$ such that nearest neighbor queries can
-be performed. Given a search query point $q$ a radius $r$ and the data structure should return  
+be performed. Given a search query point $q$ a radius $r$ and the data structure should return  
 return $X_{q,r} = \{i \;\; | \;\; ||q - x_i || \le r \}$. 
 \end{definition}
-We will later extent this definition in the obvious way to max-inner-product search (MIPS) and cosine similarity search.
+We will later extend this definition in the obvious way to max-inner-product search (MIPS) and cosine similarity search.
 Improving the practical and theoretical asymptotic time complexity for computing $X_{q,r}$ is the topic of this class.
 
 \begin{center}
@@ -28,13 +26,13 @@ One option we have is to do nothing at the preprocessing stage. Then, at query t
 This would give a query time of $\Omega(nd)$. But, of course, it would be significantly better if we could reduce the dependence on $n$, or in other words, avoid scanning the data for every query point.
 
 \section{kd-trees}
-First, we shall review a well known an widely used algorithm for this problem which is called kd-trees \cite{Bentley75}.
+First, we shall review a well known and widely used algorithm for this problem which is called kd-trees \cite{Bentley75}.
 The data structure holds the points in a geometrically partitioned tree. 
 Each subtree contains all the points in an axis aligned bounding box,
 In each depth in the tree the bounding boxes are split along an axis.
 There are many different heuristics for splitting the boxes. For didactic reasons, let's consider a simple construction that lends itself to easy analysis.
 
-In our setting, we assuming the number of points is exactly a power of $2$ and that coordinate values are distinct. 
+In our setting, we assume the number of points is exactly a power of $2$ and that coordinate values are distinct. 
 Both assumptions are relatively harmless and should not change the asymptotic behavior. 
 
 We will organize the points in a perfectly balanced binary tree. Points will be associated only with leaves. 
@@ -64,7 +62,7 @@ Assume the hyperplane is aligned with the $i$'th coordinate. That is, the points
 When splitting according to coordinate $i$, the split value is either larger or smaller than $c$. 
 When that happens, the hyperplane only touches one of the two nodes a level lower in the tree.
 The result is that, a splitting according to $i$'s coordinate cuts the number of touched leaf boxes (points) by half.
-Finally, since we cycle through the coordinated in a round robin fashion, each coordinate is used for splitting $log_2(n)/d$ times.
+Finally, since we cycle through the coordinates in a round robin fashion, each coordinate is used for splitting $log_2(n)/d$ times.
 Note that $log_2(n)$ is the depth of the tree. We can now calculate the number of touched leaf boxes by $n (1/2)^{log_2(n)/d} = n^{1-1/d}$.
 \end{proof}
 
@@ -75,7 +73,7 @@ Note that $log_2(n)$ is the depth of the tree. We can now calculate the number o
 To complete the analysis, note that the axis aligned bounding box of the query has $2d$ facets. Therefore, the number of touched cells is $O(dn^{1-1/d})$.
 For each touched cell we need to decide whether the associated point is a valid search result which takes $O(d)$ operations. 
 The resulting search complexity of the algorithm is $O(d^2n^{1-1/d})$ which is sub-linear in $n$.
-While this analysis is rather simple it it actually cannot be made much better  \cite{kdtree-worstcase}. There are many variants of this algorithm \cite{rptrees} and practical observations that claim kd-trees perform well in low dimensions. 
+While this analysis is rather simple it actually cannot be made much better  \cite{kdtree-worstcase}. There are many variants of this algorithm \cite{rptrees} and practical observations that claim kd-trees perform well in low dimensions. 
 
 Nevertheless, this runtime is only better than the brute force solution of $O(nd)$ when $n > d^d$ which already hints that there might be a problem with high dimensions.
 Before introducing the source of the problem, we should cover some basic facts about random variables. Facts that will serve us for the rest of the course.
@@ -95,13 +93,13 @@ The expectation of $X$ is the sum over the possible values times the probability
 \end{equation}
 
 
-Continuous random variable are described by their distribution function $\varphi$.
+Continuous random variables are described by their distribution function $\varphi$.
 $$
 \Pr[Y \in [a,b]] = \int_{a}^{b}\varphi (t) dt.
 $$
 For a function $\varphi$ to be a valid distribution we must have:
 \begin{eqnarray}
-\forall \;t, \;\; \varphi(t) &\ge& 0  \mbox{\;\;\; (where it is defined)}\\
+\forall \;t, \;\; \varphi(t) &\ge& 0  \mbox{\;\;\; (where it is defined)}\\
 \int_{a}^{b}\varphi (t) dt && \mbox{is well defined for all $a$ and $b$}\\
 \int_{-\infty}^{-\infty}\varphi (t) dt &=& 1
 \end{eqnarray}
@@ -117,22 +115,22 @@ This means that the probability of $Y$ being in the interval $[t,t + dt]$ is exa
 Strictly speaking, distributions are not necessarily continuous or bounded functions. 
 In fact, they can even not be a function at all. 
 For example, the distribution of $X$ above includes three Dirac-$\delta$ functions which are not, strictly speaking, functions.
-In this class, though, we will see only well behaves distributions.
+In this class, though, we will see only well behaved distributions.
 \end{remark}
 
 
 \subsection{Dependence and Independence}
 A variable $X$ is said to be {\it dependent} on $Y$ if the distribution of $X$ given $Y$ is different than the distribution of $X$. 
-For example. Assume the variable $X$ takes the value $1$ if $Y$ takes a
-value of less than $1/3$ and the values $2$ or $3$ with equal probably otherwise ($1/2$ each).
+For example, assume the variable $X$ takes the value $1$ if $Y$ takes a
+value of less than $1/3$ and the values $2$ or $3$ with equal probability otherwise ($1/2$ each).
 %
 Clearly, the probability of $X$ assuming each of its values is still
-$1/3$. however, if we know that $Y$ is $0.7234$ the probability of
+$1/3$. However, if we know that $Y$ is $0.7234$ the probability of
 $X$ assuming the value $1$ is zero. Let us calculate the expectation of $X$ given $Y$ as an exercise.
 \begin{eqnarray}
 \E(X | Y) = \sum_{x=1}^{3} x \Pr(X = x | Y \le 1/3) = 1\cdot 1\\
 \E(X | Y) = \sum_{x=1}^{3} x \Pr(X = x | Y > 1/3) = 1\cdot 0 + 2
-\frac{1}{2} + 3\frac{1}{2}  = 2.5
+\frac{1}{2} + 3\frac{1}{2}  = 2.5
 \end{eqnarray}
 $E(X | Y) = 1$ for $y \in [0,1/3]$ and $E(X | Y) = 2.5$ for $y \in (1/3,1]$.\\
 Remember: $\E(X | Y)$ is a function of $y$!
@@ -210,7 +208,7 @@ For any random variable $X$
 \end{fact}
 \begin{proof}
 \[
-\Pr[|X-E[X]| > t]  = \Pr[(X-E[X])^2 > t^2] \le \frac{\E[(X-E[X])^2]}{t^2} = \frac{\sigma^2(X)}{t^2}
+\Pr[|X-E[X]| > t]  = \Pr[(X-E[X])^2 > t^2] \le \frac{\E[(X-E[X])^2]}{t^2} = \frac{\sigma^2(X)}{t^2}
 \]
 \end{proof}
 
@@ -233,10 +231,10 @@ Also define $\sigma_i^2 = \E[X_i^2]$ and $\sigma^2 = \sum_i \sigma_i^2$. Then:
 \end{theorem}
 \begin{proof}
 \begin{eqnarray}
-\Pr[ \sum_i X_i \ge t ] &=& \Pr[ \lambda \sum_i X_i \ge \lambda  t ]  \mbox{\;\; (for $\lambda \ge 0$)} \\
-&= &\Pr[ e^{\lambda \sum_i X_i} \ge e^{\lambda  t} ]   \mbox{\;\; (because $e^x$ is monotone)} \\
-&\le &\E[e^{\lambda \sum_i X_i}] /e^{\lambda  t} \mbox{\;\; (by Markov)} \\
-&=& \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} \mbox{\;\; (by independence of $X_i$)} 
+\Pr[ \sum_i X_i \ge t ] &=& \Pr[ \lambda \sum_i X_i \ge \lambda  t ]  \mbox{\;\; (for $\lambda \ge 0$)} \\
+&= &\Pr[ e^{\lambda \sum_i X_i} \ge e^{\lambda  t} ]   \mbox{\;\; (because $e^x$ is monotone)} \\
+&\le &\E[e^{\lambda \sum_i X_i}] /e^{\lambda  t} \mbox{\;\; (by Markov)} \\
+&=& \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} \mbox{\;\; (by independence of $X_i$)} 
 \end{eqnarray}
 
 \begin{center}
@@ -250,13 +248,13 @@ Now, since $1+x \le e^x$ we have that $1 + \lambda^2 \sigma^2_i \le e^{\lambda^2
 
 
 \begin{eqnarray}
-\Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} &\le& \Pi_i \E[e^{\lambda^2 \sigma_i^2}] /e^{\lambda  t}\\
+\Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} &\le& \Pi_i \E[e^{\lambda^2 \sigma_i^2}] /e^{\lambda  t}\\
 &= & e^{\lambda^2 \sigma^2 - \lambda t}
 \end{eqnarray}
 Now, optimizing over $\lambda \in [0,1]$ we get that $\lambda = min(1,t/2\sigma^2)$ which completes the proof.
 \end{proof}
 
-\begin{theorem}[Chernoff's bound; Another useful forms]
+\begin{theorem}[Chernoff's bound; Another useful form]
 Let $X_1,\ldots,X_n$ be independent
 $\{0,1\}$ valued random variables. Each $X_i$ takes the value $1$
 with probability $p_i$ and $0$ else. Let $X = \sum_{i=1}^{n}X_i$ and
@@ -286,11 +284,11 @@ $\|x_i-q\|^2 \ge d/16$ if $d \ge \const\cdot\log(n)$.
 Now, consider the kd-tree data structure and algorithm run on a random query.
 If the radius of the ball around $q$ is less than $d/16$ the query is ``uninteresting'' since it is likely to return no results at all.
 On the other hand, if the radius is greater than $d/16$ than the ball around $q$ will cross all the major partitions 
-along one of the axis. That means that the algorithm will visit at least $2^d$ partitions.
+along one of the axes. That means that the algorithm will visit at least $2^d$ partitions.
 
 
 \section{Volumes of balls and cubes}
-Another interesting phenomenon that occurs in high dimensions in the fact that unit spheres 
+Another interesting phenomenon that occurs in high dimensions is the fact that unit spheres 
 are exponentially smaller (in volume) than their containing boxes.
 Let us see this without using the explicit formulas for the volume of $d$ dimensional spheres.
 
@@ -307,10 +305,10 @@ Let $z_i = x(i)^2$, and note that
 $\E[z(i)] = \int_{-1}^{1}\frac{1}{2}t^2 dt = 1/3$. Therefore, $\E[\|x\|^2] = d/3$. 
 Also, 
 \[
-\var(z_i)  = \int_{-1}^{1}\frac{1}{2}t^4 dt  - (1/3)^2  = 1/5 - 1/9 \le 1/10
+\var(z_i)  = \int_{-1}^{1}\frac{1}{2}t^4 dt  - (1/3)^2  = 1/5 - 1/9 \le 1/10
 \]
 so by Chernoff's inequality.
-$p = \Pr[\sum_{i=1}^{d}x(i)^2 \le 1]  = \Pr[\sum_{i=1}^{d}(z_i -\E[z_i] ) \le 1-d/3] \le e^{-\frac{(d/3)^2}{4d/10}} \le e^{-d/4}$.
+$p = \Pr[\sum_{i=1}^{d}x(i)^2 \le 1]  = \Pr[\sum_{i=1}^{d}(z_i -\E[z_i] ) \le 1-d/3] \le e^{-\frac{(d/3)^2}{4d/10}} \le e^{-d/4}$.
 This concludes the observation that the fraction of the volume which is inside the sphere is 
 exponentially small compared to the cube.
 A counter intuitive way of viewing this is that almost the entire volume of the cube is concentrated at the ``corners".
@@ -320,7 +318,7 @@ A counter intuitive way of viewing this is that almost the entire volume of the 
 It turns out that two random vectors are also almost orthogonal.
 We can see this in two ways.
 
-First, we can see that the expected, dot product of any vector $x$ with a random vector $y$ is small.
+First, we can see that the expected dot product of any vector $x$ with a random vector $y$ is small.
 It is trivial that $\E[\langle x,y \rangle] = 0$ since the distribution of $y$ is symmetric.
 Moreover, $\E[\langle x,y \rangle^2] = 1/d$.
 To see this, consider $y_1,y_2,\ldots,y_d$ where $y_1 = y$ and $y_2,\ldots,y_d$ complete $y$ to an orthogonal basis.
@@ -328,20 +326,20 @@ Clearly, the distribution of all $y_i$ are identical (but not independent)
 $\E[\langle x,y \rangle^2] = \E[\langle x,y_1\rangle^2] = \E[\frac{1}{d}\sum_{i=1}^{d}\langle x,y_i\rangle^2] = \frac{1}{d}\|x\|^2 = \frac{1}{d}$.
 
 It is not hard to show that in fact for any vector $x$, if $y$ is chosen uniformly at random from the unit sphere 
-then $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] \le e^{-t^2/2}$.
+then $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] \le e^{-t^2/2}$.
 First, replace that uniform distribution over the unit sphere with an i.i.d. distribution of Gaussians $y(i)\sim \N(0,\frac{1}{\sqrt{d}})$.
 Note that $E[\|y\|^2] = 1$, moreover, from the sharp concentration of the $\chi^2$ distribution we know that $E[\|y\|^2] \approx 1$.
 For convenience we will assume that $E[\|y\|^2] = 1$ and will ignore the small inaccuracy.
 Moreover, due to the rotational invariance of the Gaussian distribution we have that any direction is equally likely and thus this
 new distribution approximates the uniform distribution over the sphere.
 Next, notice that due to the rotational invariance $\langle x,y \rangle \sim \N(0,\frac{\|x\|}{\sqrt{d}}) = \N(0,\frac{1}{\sqrt{d}})$.
-Therefore, letting $Z \sim \N(0,1)$ we have $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] = \Pr[Z \ge t] \le e^{-t^2/2}$.
+Therefore, letting $Z \sim \N(0,1)$ we have $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] = \Pr[Z \ge t] \le e^{-t^2/2}$.
 
 
 \section{The failure of space partitioning schemes}
-As we've seen a ``typical'' distance from a random query to the nearest neighbor in a $d$-dimensional unit box is at the scale of $\sqrt{d}$.
+As we've seen, a ``typical'' distance from a random query to the nearest neighbor in a $d$-dimensional unit box is at the scale of $\sqrt{d}$.
 Note that the side of any box in any space partitioning scheme (including kd-trees, of course) is at most $1$. 
-As a result, we guarantied to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
+As a result, we guaranteed to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
 Note that this is more than the brute force solution of $O(nd)$ when $d > \log(n)$. 
 
 
