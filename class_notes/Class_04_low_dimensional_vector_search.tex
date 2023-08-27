@@ -1,6 +1,11 @@
 \documentclass{article}
 \usepackage{vs}
+
+\usepackage{wrapfig}
+
 \begin{document}
+
+
 
 \lecturetitle{Class 4 - Low Dimensional Vector Search}
 \section{Nearest Neighbor Search Definition}
@@ -186,11 +191,16 @@ For any two {\bf independent} variables $X$ and $Y$ we have
 \end{definition}
 
 \begin{fact}[Markov's inequality]%
-For any {\it positive} random variable $X$:
+For any {\it non-negative} random variable $X$:
 \begin{equation}
 \Pr(X > t) \le \frac{E[X]}{t}
 \end{equation}
 \end{fact}
+\begin{proof}
+\[
+\E_\psi[x] = \int_0^{\infty} z\psi(z)dz = \int_0^{t} z\psi(z)dz + \int_t^{\infty} z\psi(z)dz \ge 0 + \int_t^{\infty} t\psi(z)dz = t \Pr[x>t]
+\]
+\end{proof}
 
 \begin{fact}[Chebyshev's inequality]%
 For any random variable $X$
@@ -198,6 +208,11 @@ For any random variable $X$
 \Pr[|X-E[X]| > t] \le \frac{\sigma^2(X)}{t^2}
 \end{equation}
 \end{fact}
+\begin{proof}
+\[
+\Pr[|X-E[X]| > t]  = \Pr[(X-E[X])^2 > t^2] \le \frac{\E[(X-E[X])^2]}{t^2} = \frac{\sigma^2(X)}{t^2}
+\]
+\end{proof}
 
 \begin{lemma}[The union bound]
 For any set of $m$ events $A_1,\ldots,A_m$:
@@ -221,19 +236,25 @@ Also define $\sigma_i^2 = \E[X_i^2]$ and $\sigma^2 = \sum_i \sigma_i^2$. Then:
 \Pr[ \sum_i X_i \ge t ] &=& \Pr[ \lambda \sum_i X_i \ge \lambda  t ]  \mbox{\;\; (for $\lambda \ge 0$)} \\
 &= &\Pr[ e^{\lambda \sum_i X_i} \ge e^{\lambda  t} ]   \mbox{\;\; (because $e^x$ is monotone)} \\
 &\le &\E[e^{\lambda \sum_i X_i}] /e^{\lambda  t} \mbox{\;\; (by Markov)} \\
-&=& \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} 
+&=& \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} \mbox{\;\; (by independence of $X_i$)} 
 \end{eqnarray}
 
-Now, for $x \in [0,1]$ we have that $e^x \le 1 + x + x^2$ so $\E[e^{\lambda X_i}] \le 1 + \E[\lambda X_i] + \lambda^2 \E[X_i^2] \le 1 + \lambda^2 \sigma^2_i$.
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/chernoff-exp-bounds.png}
+\end{center}
+
+Now, for $x \in [-1,1]$ we have that $e^x \le 1 + x + x^2$ so $\E[e^{\lambda X_i}] \le 1 + \E[\lambda X_i] + \lambda^2 \E[X_i^2] \le 1 + \lambda^2 \sigma^2_i$.
 Now, since $1+x \le e^x$ we have that $1 + \lambda^2 \sigma^2_i \le e^{\lambda^2 \sigma_i^2}$. Combining the above we have that $\E[e^{\lambda X_i}] \le e^{\lambda^2 \sigma_i^2}$
-\end{proof}
+
+
+
 
 \begin{eqnarray}
 \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} &\le& \Pi_i \E[e^{\lambda^2 \sigma_i^2}] /e^{\lambda  t}\\
 &= & e^{\lambda^2 \sigma^2 - \lambda t}
 \end{eqnarray}
 Now, optimizing over $\lambda \in [0,1]$ we get that $\lambda = min(1,t/2\sigma^2)$ which completes the proof.
-
+\end{proof}
 
 \begin{theorem}[Chernoff's bound; Another useful forms]
 Let $X_1,\ldots,X_n$ be independent
