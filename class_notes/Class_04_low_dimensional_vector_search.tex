@@ -110,8 +110,9 @@ This means that the probability of $Y$ being in the interval $[t,t + dt]$ is exa
 
 \begin{remark}
 Strictly speaking, distributions are not necessarily continuous or bounded functions. 
-In fact, they can even no be a function at all. 
-For example, the distribution of $X$ above includes three Dirac-$\delta$ functions which are not valid functions.
+In fact, they can even not be a function at all. 
+For example, the distribution of $X$ above includes three Dirac-$\delta$ functions which are not, strictly speaking, functions.
+In this class, though, we will see only well behaves distributions.
 \end{remark}
 
 
@@ -198,19 +199,6 @@ For any random variable $X$
 \end{equation}
 \end{fact}
 
-
-\begin{lemma}[Chernoff's bound]
-Let $X_1,\ldots,X_n$ be independent Bernoulli trials $\Pr[X_i=1] = p_i$. 
-And let $X = \sum_{i=1}^{n}X_i$ and $\mu = E[X] = \sum_{i=1}^{n}p_i$.
-\begin{equation}
-\Pr[X > (1 + \eps)\mu] \le e^{-\mu \eps^2/4}
-\end{equation} 
-\begin{equation}
-\Pr[X < (1 - \eps)\mu] \le e^{-\mu \eps^2/2}
-\end{equation} 
-\end{lemma}
-
-
 \begin{lemma}[The union bound]
 For any set of $m$ events $A_1,\ldots,A_m$:
 \[
@@ -219,6 +207,48 @@ For any set of $m$ events $A_1,\ldots,A_m$:
 \end{lemma}
 In words, the probability that one or more events happen is at most the sum of the 
 individual event probabilities. 
+
+
+\begin{theorem}[Chernoff's bound]
+Let $X_i$ be a set of {\bf independent} random variables such that $\E[X_i] = 0$ and $|X_i| \le 1$ almost surely.
+Also define $\sigma_i^2 = \E[X_i^2]$ and $\sigma^2 = \sum_i \sigma_i^2$. Then:
+\[
+\Pr[ \sum_i X_i \ge t ] \le max(e^{-t^2/4\sigma^2} , e^{-t/2})
+\]
+\end{theorem}
+\begin{proof}
+\begin{eqnarray}
+\Pr[ \sum_i X_i \ge t ] &=& \Pr[ \lambda \sum_i X_i \ge \lambda  t ]  \mbox{\;\; (for $\lambda \ge 0$)} \\
+&= &\Pr[ e^{\lambda \sum_i X_i} \ge e^{\lambda  t} ]   \mbox{\;\; (because $e^x$ is monotone)} \\
+&\le &\E[e^{\lambda \sum_i X_i}] /e^{\lambda  t} \mbox{\;\; (by Markov)} \\
+&=& \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} 
+\end{eqnarray}
+
+Now, for $x \in [0,1]$ we have that $e^x \le 1 + x + x^2$ so $\E[e^{\lambda X_i}] \le 1 + \E[\lambda X_i] + \lambda^2 \E[X_i^2] \le 1 + \lambda^2 \sigma^2_i$.
+Now, since $1+x \le e^x$ we have that $1 + \lambda^2 \sigma^2_i \le e^{\lambda^2 \sigma_i^2}$. Combining the above we have that $\E[e^{\lambda X_i}] \le e^{\lambda^2 \sigma_i^2}$
+\end{proof}
+
+\begin{eqnarray}
+\Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} &\le& \Pi_i \E[e^{\lambda^2 \sigma_i^2}] /e^{\lambda  t}\\
+&= & e^{\lambda^2 \sigma^2 - \lambda t}
+\end{eqnarray}
+Now, optimizing over $\lambda \in [0,1]$ we get that $\lambda = min(1,t/2\sigma^2)$ which completes the proof.
+
+
+\begin{theorem}[Chernoff's bound; Another useful forms]
+Let $X_1,\ldots,X_n$ be independent
+$\{0,1\}$ valued random variables. Each $X_i$ takes the value $1$
+with probability $p_i$ and $0$ else. Let $X = \sum_{i=1}^{n}X_i$ and
+let $\mu = E[X] = \sum_{i=1}^{n}p_i$. Then:
+\begin{eqnarray*}
+\Pr[X > (1+\eps)\mu] &\le& e^{-\mu \eps^2/4}\\
+\Pr[X < (1-\eps)\mu] &\le& e^{-\mu \eps^2/2}
+\end{eqnarray*}
+Or, using the union bound:
+\[
+\Pr[|X - \mu| > \eps\mu] \le 2e^{-\mu \eps^2/4}
+\]
+\end{theorem}
 
 
 
@@ -285,6 +315,13 @@ Moreover, due to the rotational invariance of the Gaussian distribution we have 
 new distribution approximates the uniform distribution over the sphere.
 Next, notice that due to the rotational invariance $\langle x,y \rangle \sim \N(0,\frac{\|x\|}{\sqrt{d}}) = \N(0,\frac{1}{\sqrt{d}})$.
 Therefore, letting $Z \sim \N(0,1)$ we have $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] = \Pr[Z \ge t] \le e^{-t^2/2}$.
+
+
+\section{The failure of space partitioning schemes}
+As we've seen a ``typical'' distance from a random query to the nearest neighbor in a $d$-dimensional unit box is at the scale of $\sqrt{d}$.
+Note that the side of any box in any space partitioning scheme (including kd-trees, of course) is at most $1$. 
+As a result, we guarantied to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
+Note that this is more than the brute force solution of $O(nd)$ when $d > \log(n)$. 
 
 
 
