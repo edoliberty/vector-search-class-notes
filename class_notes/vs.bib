@@ -1,12 +1,49 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Edo Liberty at 2023-08-27 22:55:34 -0400 
+%% Created for Edo Liberty at 2023-08-28 10:10:02 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@inproceedings{NIPS2013_6e0721b2,
+	author = {Achlioptas, Dimitris and Karnin, Zohar S and Liberty, Edo},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2023-08-28 07:26:11 -0400},
+	date-modified = {2023-08-28 07:26:11 -0400},
+	editor = {C.J. Burges and L. Bottou and M. Welling and Z. Ghahramani and K.Q. Weinberger},
+	publisher = {Curran Associates, Inc.},
+	title = {Near-Optimal Entrywise Sampling for Data Matrices},
+	url = {https://proceedings.neurips.cc/paper_files/paper/2013/file/6e0721b2c6977135b916ef286bcb49ec-Paper.pdf},
+	volume = {26},
+	year = {2013},
+	bdsk-url-1 = {https://proceedings.neurips.cc/paper_files/paper/2013/file/6e0721b2c6977135b916ef286bcb49ec-Paper.pdf}}
+
+@inbook{doi:10.1137/1.9781611974317.7,
+	abstract = { Abstract This paper shows that one can be competitive with the k-means objective while operating online. In this model, the algorithm receives vectors v1, {\ldots}, vn one by one in an arbitrary order. For each vector vt the algorithm outputs a cluster identifier before receiving vt+1. Our online algorithm generates O(k log n log γn) clusters whose expected k-means cost is O(W* log n). Here, W* is the optimal k-means cost using k clusters and γ is the aspect ratio of the data. The dependence on γ is shown to be unavoidable and tight. We also show that, experimentally, it is not much worse than k-means++ while operating in a strictly more constrained computational model. },
+	author = {Edo Liberty and Ram Sriharsha and Maxim Sviridenko},
+	booktitle = {2016 Proceedings of the Meeting on Algorithm Engineering and Experiments (ALENEX)},
+	date-added = {2023-08-27 23:57:26 -0400},
+	date-modified = {2023-08-27 23:57:26 -0400},
+	doi = {10.1137/1.9781611974317.7},
+	eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611974317.7},
+	pages = {81-89},
+	title = {An Algorithm for Online K-Means Clustering},
+	url = {https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.7},
+	bdsk-url-1 = {https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.7},
+	bdsk-url-2 = {https://doi.org/10.1137/1.9781611974317.7}}
+
+@misc{liberty2022simpler,
+	archiveprefix = {arXiv},
+	author = {Edo Liberty},
+	date-added = {2023-08-27 23:55:56 -0400},
+	date-modified = {2023-08-27 23:55:56 -0400},
+	eprint = {2202.01780},
+	primaryclass = {cs.DS},
+	title = {Even Simpler Deterministic Matrix Sketching},
+	year = {2022}}
 
 @inproceedings{nngraph,
 	abstract = {K-Nearest Neighbor Graph (K-NNG) construction is an important operation with many web related applications, including collaborative filtering, similarity search, and many others in data mining and machine learning. Existing methods for K-NNG construction either do not scale, or are specific to certain similarity measures. We present NN-Descent, a simple yet efficient algorithm for approximate K-NNG construction with arbitrary similarity measures. Our method is based on local search, has minimal space overhead and does not rely on any shared global index. Hence, it is especially suitable for large-scale applications where data structures need to be distributed over the network. We have shown with a variety of datasets and similarity measures that the proposed method typically converges to above 90\% recall with each point comparing only to several percent of the whole dataset on average.},
@@ -155,9 +192,9 @@
 	year = {2017}}
 
 @article{pq,
-	author = {J{\'e}gou, Herve and Douze, Matthijs and Schmid, Cordelia},
+	author = {Jegou, Herve and Douze, Matthijs and Schmid, Cordelia},
 	date-added = {2023-08-27 22:45:03 -0400},
-	date-modified = {2023-08-27 22:45:14 -0400},
+	date-modified = {2023-08-28 10:10:02 -0400},
 	doi = {10.1109/TPAMI.2010.57},
 	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
 	number = {1},
@@ -241,58 +278,6 @@
 	bdsk-url-1 = {http://doi.acm.org/10.1145/1255443.1255449},
 	bdsk-url-2 = {http://dx.doi.org/10.1145/1255443.1255449}}
 
-@inproceedings{Boutsidis2011,
-	acmid = {2082967},
-	address = {Washington, DC, USA},
-	author = {Boutsidis, Christos and Drineas, Petros and Magdon-Ismail, Malik},
-	booktitle = {Proceedings of the 2011 IEEE 52nd Annual Symposium on Foundations of Computer Science},
-	date-added = {2012-12-16 15:50:21 +0200},
-	date-modified = {2012-12-16 15:50:37 +0200},
-	doi = {10.1109/FOCS.2011.21},
-	isbn = {978-0-7695-4571-4},
-	keywords = {low-rank matrix approximation, subset selection, SVD, approximate SVD, spectral sparsification},
-	numpages = {10},
-	pages = {305--314},
-	publisher = {IEEE Computer Society},
-	series = {FOCS '11},
-	title = {Near Optimal Column-Based Matrix Reconstruction},
-	url = {http://dx.doi.org/10.1109/FOCS.2011.21},
-	year = {2011},
-	bdsk-url-1 = {http://dx.doi.org/10.1109/FOCS.2011.21}}
-
-@article{CandesRechtMatrixBernsteinInequality,
-	acmid = {2184343},
-	address = {New York, NY, USA},
-	author = {Cand\`{e}s, Emmanuel and Recht, Benjamin},
-	date-added = {2012-12-16 10:25:37 +0200},
-	date-modified = {2012-12-16 10:26:07 +0200},
-	doi = {10.1145/2184319.2184343},
-	issn = {0001-0782},
-	issue_date = {June 2012},
-	journal = {Commun. ACM},
-	month = jun,
-	number = {6},
-	numpages = {9},
-	pages = {111--119},
-	publisher = {ACM},
-	title = {Exact matrix completion via convex optimization},
-	url = {http://doi.acm.org/10.1145/2184319.2184343},
-	volume = {55},
-	year = {2012},
-	bdsk-url-1 = {http://doi.acm.org/10.1145/2184319.2184343},
-	bdsk-url-2 = {http://dx.doi.org/10.1145/2184319.2184343}}
-
-@article{DrineasZouziasMatrixSampling10,
-	author = {Petros Drineas and Anastasios Zouzias},
-	bibsource = {DBLP, http://dblp.uni-trier.de},
-	date-added = {2012-12-16 10:05:24 +0200},
-	date-modified = {2012-12-16 10:05:24 +0200},
-	ee = {http://arxiv.org/abs/1006.0407},
-	journal = {CoRR},
-	title = {A Note on Element-wise Matrix Sparsification via Matrix-valued Chernoff Bounds},
-	volume = {abs/1006.0407},
-	year = {2010}}
-
 @inproceedings{AroraHaKaFRS06,
 	acmid = {2165259},
 	address = {Berlin, Heidelberg},
@@ -331,58 +316,6 @@
 	pages = {1195-1206},
 	title = {Sparser Johnson-Lindenstrauss transforms},
 	year = {2012}}
-
-@inproceedings{MankuM02,
-	author = {Gurmeet Singh Manku and Rajeev Motwani},
-	bibsource = {DBLP, http://dblp.uni-trier.de},
-	booktitle = {VLDB},
-	crossref = {DBLP:conf/vldb/2002},
-	date-added = {2012-11-12 11:55:56 +0200},
-	date-modified = {2012-11-12 11:55:56 +0200},
-	ee = {http://www.vldb.org/conf/2002/S10P03.pdf},
-	pages = {346-357},
-	title = {Approximate Frequency Counts over Data Streams},
-	year = {2002}}
-
-@inproceedings{DemaineLopezAlejandroMunro2002,
-	acmid = {740658},
-	address = {London, UK, UK},
-	author = {Demaine, Erik D. and L\'{o}pez-Ortiz, Alejandro and Munro, J. Ian},
-	booktitle = {Proceedings of the 10th Annual European Symposium on Algorithms},
-	date-added = {2012-11-12 00:29:13 +0200},
-	date-modified = {2012-11-12 00:29:13 +0200},
-	isbn = {3-540-44180-8},
-	numpages = {13},
-	pages = {348--360},
-	publisher = {Springer-Verlag},
-	series = {ESA '02},
-	title = {Frequency Estimation of Internet Packet Streams with Limited Space},
-	url = {http://dl.acm.org/citation.cfm?id=647912.740658},
-	year = {2002},
-	bdsk-url-1 = {http://dl.acm.org/citation.cfm?id=647912.740658}}
-
-@article{CormodeM05,
-	author = {Graham Cormode and S. Muthukrishnan},
-	bibsource = {DBLP, http://dblp.uni-trier.de},
-	date-added = {2012-11-12 00:29:10 +0200},
-	date-modified = {2012-11-12 00:29:10 +0200},
-	ee = {http://dx.doi.org/10.1016/j.jalgor.2003.12.001},
-	journal = {J. Algorithms},
-	number = {1},
-	pages = {58-75},
-	title = {An improved data stream summary: the count-min sketch and its applications},
-	volume = {55},
-	year = {2005}}
-
-@techreport{Misra1982,
-	address = {Ithaca, NY, USA},
-	author = {Misra, Jayadev and Gries, David},
-	date-added = {2012-11-12 00:29:02 +0200},
-	date-modified = {2012-11-12 00:29:02 +0200},
-	publisher = {Cornell University},
-	source = {http://www.ncstrl.org:8900/ncstrl/servlet/search?formname=detail\&id=oai%3Ancstrlh%3Acornellcs%3ACORNELLCS%3ATR82-505},
-	title = {Finding Repeated Elements},
-	year = {1982}}
 
 @article{GuhaMMMO03,
 	author = {Sudipto Guha and Adam Meyerson and Nina Mishra and Rajeev Motwani and Liadan O'Callaghan},
@@ -425,9 +358,9 @@
 	author = {S. {Har-Peled} and A. Kushal},
 	booktitle = SOCG_2005,
 	date-added = {2012-01-15 14:17:41 +0200},
-	date-modified = {2012-01-15 15:37:34 +0200},
+	date-modified = {2023-08-28 07:17:01 -0400},
 	pages = {126--134},
-	title = {Smaller Coresets for $k$-Median and $k$-Means Clustering},
+	title = {Smaller Coresets for k-Median and k-Means Clustering},
 	year = {2005}}
 
 @inproceedings{DingH04a,
@@ -436,9 +369,9 @@
 	booktitle = {ICML},
 	crossref = {DBLP:conf/icml/2004},
 	date-added = {2012-01-14 18:01:07 +0200},
-	date-modified = {2012-01-14 18:01:18 +0200},
+	date-modified = {2023-08-28 07:16:45 -0400},
 	ee = {http://doi.acm.org/10.1145/1015330.1015408},
-	title = {{\it K}-means clustering via principal component analysis},
+	title = {K-means clustering via principal component analysis},
 	year = {2004}}
 
 @article{Lloyd82leastsquares,
@@ -511,13 +444,6 @@
 	title = {Pass Efficient Algorithms for Approximating Large Matrices},
 	year = {2003}}
 
-@article{VershyninMatrixChernoffBounds,
-	author = {Roman Vershynin},
-	date-added = {2011-12-18 11:52:50 +0200},
-	date-modified = {2011-12-18 11:56:41 +0200},
-	journal = {Lecture Notes},
-	title = {A Note On Sums of Independent Random MAtrices After Ahlswede-Winter}}
-
 @article{AhlswedeW02,
 	author = {Rudolf Ahlswede and Andreas Winter},
 	bibsource = {DBLP, http://dblp.uni-trier.de},
@@ -546,9 +472,9 @@
 @article{DasGuptaGupta99,
 	author = {S. DasGupta and A. Gupta},
 	date-added = {2011-11-27 14:06:16 +0200},
-	date-modified = {2011-11-27 14:06:16 +0200},
+	date-modified = {2023-08-28 07:29:49 -0400},
 	journal = {Technical Report, UC Berkeley},
-	title = {An elementary proof of the {J}ohnson-{L}indenstrauss lemma},
+	title = {An elementary proof of the Johnson-Lindenstrauss lemma},
 	volume = {99-006},
 	year = 1999}
 
@@ -557,82 +483,17 @@
 	author = {Nir Ailon and Bernard Chazelle},
 	booktitle = {Proceedings of the 38st Annual Symposium on the Theory of Compututing (STOC)},
 	date-added = {2011-11-27 14:05:58 +0200},
-	date-modified = {2011-11-27 14:05:58 +0200},
+	date-modified = {2023-08-28 07:30:03 -0400},
 	pages = {557--563},
-	title = {Approximate nearest neighbors and the fast {J}ohnson-{L}indenstrauss transform},
+	title = {Approximate nearest neighbors and the fast Johnson-Lindenstrauss transform},
 	year = 2006}
 
 @article{JL84,
 	author = {W. B. Johnson and J. Lindenstrauss},
 	date-added = {2011-11-27 14:05:01 +0200},
-	date-modified = {2011-11-27 14:05:01 +0200},
+	date-modified = {2023-08-28 07:18:14 -0400},
 	journal = {Contemporary Mathematics},
 	pages = {189--206},
-	title = {Extensions of {L}ipschitz mappings into a {H}ilbert space},
+	title = {Extensions of Lipschitz mappings into a Hilbert space},
 	volume = 26,
 	year = 1984}
-
-@article{Cohen97,
-	acmid = {270010},
-	address = {Orlando, FL, USA},
-	author = {Cohen, Edith},
-	date-added = {2011-11-20 18:25:51 +0200},
-	date-modified = {2011-11-20 18:26:01 +0200},
-	doi = {10.1006/jcss.1997.1534},
-	issn = {0022-0000},
-	issue = {3},
-	journal = {J. Comput. Syst. Sci.},
-	month = {December},
-	numpages = {13},
-	pages = {441--453},
-	publisher = {Academic Press, Inc.},
-	title = {Size-estimation framework with applications to transitive closure and reachability},
-	url = {http://dl.acm.org/citation.cfm?id=269994.270010},
-	volume = {55},
-	year = {1997},
-	bdsk-url-1 = {http://dl.acm.org/citation.cfm?id=269994.270010},
-	bdsk-url-2 = {http://dx.doi.org/10.1006/jcss.1997.1534}}
-
-@misc{Flajolet85probabilisticcounting,
-	author = {Philippe Flajolet and G. N. Martin and G. Nigel Martin},
-	date-added = {2011-11-20 18:11:01 +0200},
-	date-modified = {2011-11-20 18:11:01 +0200},
-	title = {Probabilistic Counting Algorithms for Data Base Applications},
-	year = {1985}}
-
-@inproceedings{AMS96,
-	acmid = {237823},
-	address = {New York, NY, USA},
-	author = {Alon, Noga and Matias, Yossi and Szegedy, Mario},
-	booktitle = {Proceedings of the twenty-eighth annual ACM symposium on Theory of computing},
-	date-added = {2011-11-20 18:06:03 +0200},
-	date-modified = {2011-11-20 18:06:18 +0200},
-	doi = {http://doi.acm.org/10.1145/237814.237823},
-	isbn = {0-89791-785-5},
-	location = {Philadelphia, Pennsylvania, United States},
-	numpages = {10},
-	pages = {20--29},
-	publisher = {ACM},
-	series = {STOC '96},
-	title = {The space complexity of approximating the frequency moments},
-	url = {http://doi.acm.org/10.1145/237814.237823},
-	year = {1996},
-	bdsk-url-1 = {http://doi.acm.org/10.1145/237814.237823}}
-
-@inproceedings{Charikar02findingfrequent,
-	author = {Moses Charikar and Kevin Chen and Martin Farach-colton},
-	date-added = {2011-11-15 15:26:49 +0200},
-	date-modified = {2011-11-15 15:26:49 +0200},
-	pages = {693--703},
-	title = {Finding frequent items in data streams},
-	year = {2002}}
-
-@article{Karp03asimple,
-	author = {Richard M. Karp and Christos H. Papadimitriou and Scott Shenker},
-	date-added = {2011-11-13 16:16:42 +0200},
-	date-modified = {2011-11-13 16:16:42 +0200},
-	journal = {ACM Transactions on Database Systems},
-	pages = {2003},
-	title = {A Simple Algorithm For Finding Frequent Elements In Streams And Bags},
-	volume = {28},
-	year = {2003}}
