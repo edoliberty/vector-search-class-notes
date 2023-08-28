@@ -120,8 +120,11 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 ## Selected literature 
 
 * [A fast random sampling algorithm for sparsifying matrices](http://dx.doi.org/10.1007/11830924_26) - Arora, Sanjeev and Hazan, Elad and Kale, Satyen - 2006
+* [A Randomized Algorithm for Principal Component Analysis](http://dx.doi.org/10.1137/080736417) - Vladimir Rokhlin and Arthur Szlam and Mark Tygert - 2009
 * A search structure based on kd trees for efficient ray tracing - Subramanian, KR and Fussel, DS - 1990
+* A Short Proof for Gap Independence of Simultaneous Iteration - Edo Liberty - 2016
 * Accelerating Large-Scale Inference with Anisotropic Vector Quantization - Ruiqi Guo and Philip Sun and Erik Lindgren and Quan Geng and David Simcha and Felix Chern and Sanjiv Kumar - 2020
+* [Advances in Neural Information Processing Systems 28: Annual Conference on Neural Information Processing Systems 2015, December 7-12, 2015, Montreal, Quebec, Canada](http://papers.nips.cc/book/advances-in-neural-information-processing-systems-28-2015) - 2015
 * [An Algorithm for Online K-Means Clustering](https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.7) - Edo Liberty and Ram Sriharsha and Maxim Sviridenko
 * An Almost Optimal Unrestricted Fast Johnson-Lindenstrauss Transform - Nir Ailon and Edo Liberty - 2011
 * An elementary proof of the Johnson-Lindenstrauss lemma - S. DasGupta and A. Gupta - 1999
@@ -134,6 +137,8 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 * Even Simpler Deterministic Matrix Sketching - Edo Liberty - 2022
 * Extensions of Lipschitz mappings into a Hilbert space - W. B. Johnson and J. Lindenstrauss - 1984
 * Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph - Cong Fu and Chao Xiang and Changxu Wang and Deng Cai - 2018
+* [Finding Structure with Randomness: Probabilistic Algorithms for Constructing Approximate Matrix Decompositions](http://dx.doi.org/10.1137/090771806) - Halko, N. and Martinsson, P. G. and Tropp, J. A. - 2011
+* Invertibility of random matrices: norm of the inverse - Mark Rudelson - 2008
 * K-means clustering via principal component analysis - Chris H. Q. Ding and Xiaofeng He - 2004
 * k-means++: the advantages of careful seeding - David Arthur and Sergei Vassilvitskii - 2007
 * Least squares quantization in pcm - Stuart P. Lloyd - 1982
@@ -145,6 +150,8 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 * QuickCSG: Arbitrary and faster boolean combinations of n solids - Douze, Matthijs and Franco, Jean-S{\'e}bastien and Raffin, Bruno - 2015
 * [Quicker {ADC} : Unlocking the Hidden Potential of Product Quantization With {SIMD](https://doi.org/10.1109%2Ftpami.2019.2952606) - Fabien Andre and Anne-Marie Kermarrec and Nicolas Le Scouarnec - 2021
 * [Random Projection Trees and Low Dimensional Manifolds](https://doi.org/10.1145/1374376.1374452) - Dasgupta, Sanjoy and Freund, Yoav - 2008
+* [Randomized Algorithms for Low-Rank Matrix Factorizations: Sharp Performance Bounds](http://dx.doi.org/10.1007/s00453-014-9891-7) - Witten, Rafi and Cand\`{e}s, Emmanuel - 2015
+* [Randomized Block Krylov Methods for Stronger and Faster Approximate Singular Value Decomposition](http://papers.nips.cc/paper/5735-randomized-block-krylov-methods-for-stronger-and-faster-approximate-singular-value-decomposition) - Cameron Musco and Christopher Musco - 2015
 * [Revisiting Additive Quantization](https://api.semanticscholar.org/CorpusID:7340738) - Julieta Martinez and Joris Clement and Holger H. Hoos and J. Little - 2016
 * [Sampling from large matrices: An approach through geometric functional analysis](http://doi.acm.org/10.1145/1255443.1255449) - Rudelson, Mark and Vershynin, Roman - 2007
 * Similarity estimation techniques from rounding algorithms - Moses Charikar - 2002
