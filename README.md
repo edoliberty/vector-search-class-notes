@@ -52,10 +52,17 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Curse of dimensionality and the failure of space partitioning
 
 1. 10/6 - Class 5 - Dimensionality Reduction [Edo] 
-	* Principal Components Analysis, optimal dimension reduction in the sum of squared distance measure
-	* Fast PCA algorithms 
-	* Random Projections. Gaussian random i.i.d. dimension reduction 
-	* Fast Random Projections. Accelerating the above to near linear time
+	* Singular Value Decomposition (SVD)
+	* Applications of the SVD
+	* Rank-k approximation in the spectral norm
+	* Rank-k approximation in the Frobenius norm
+	* Linear regression in the least-squared loss
+	* PCA, Optimal squared loss dimension reduction
+	* Closest orthogonal matrix
+	* Computing the SVD: The power method
+	* Random-projection
+	* Matrices with normally distributed independent entries
+	* Fast Random Projections
 
 1. 10/13 - No Class - Midterm Examination Week
 
