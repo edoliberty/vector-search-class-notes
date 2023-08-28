@@ -18,6 +18,8 @@ return $X_{q,r} = \{i \;\; | \;\; ||q - x_i || \le r \}$.
 We will later extend this definition in the obvious way to max-inner-product search (MIPS) and cosine similarity search.
 Improving the practical and theoretical asymptotic time complexity for computing $X_{q,r}$ is the topic of this class.
 
+*** maybe not necessary to specify poly here since nobody would rpopose an exponential method as the baseline is O(nd) *** 
+
 \begin{center}
 \includegraphics[width=1.0\textwidth]{images/vectorsearch.png}
 \end{center}
@@ -37,7 +39,8 @@ Both assumptions are relatively harmless and should not change the asymptotic be
 
 We will organize the points in a perfectly balanced binary tree. Points will be associated only with leaves. 
 The construction of the tree is simple. We start with all points in a single box (a node in the tree) 
-We split the box in two along the first coordinate such that exactly half the points lie on each side.
+We split the box in two along the first coordinate such that exactly half the points lie on each side. 
+The splitting offset is given by the median of these coordinates. 
 Then, do the same for each of the two resulting boxes wrt to the second coordinate.
 Then, again, for the four resulting boxes wrt to the third coordinate and so on.
 Splitting stops when there is exactly one point in each leaf.
@@ -48,7 +51,7 @@ Splitting stops when there is exactly one point in each leaf.
 \end{center}
 
 
-When searching the tree, we should consider only points whose bounding boxes touch the query region (ball in this case).
+When searching the tree, we consider only points whose bounding boxes touch the query region (ball in this case).
 
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/kdtrees-search.png}
@@ -74,6 +77,11 @@ To complete the analysis, note that the axis aligned bounding box of the query h
 For each touched cell we need to decide whether the associated point is a valid search result which takes $O(d)$ operations. 
 The resulting search complexity of the algorithm is $O(d^2n^{1-1/d})$ which is sub-linear in $n$.
 While this analysis is rather simple it actually cannot be made much better  \cite{kdtree-worstcase}. There are many variants of this algorithm \cite{rptrees} and practical observations that claim kd-trees perform well in low dimensions. 
+
+Kd-trees are used extensively in 3D libraries to organize objects, lights, etc. 
+They are data adaptive, meaning that they support concentrating on areas where there is data. 
+
+
 
 Nevertheless, this runtime is only better than the brute force solution of $O(nd)$ when $n > d^d$ which already hints that there might be a problem with high dimensions.
 Before introducing the source of the problem, we should cover some basic facts about random variables. Facts that will serve us for the rest of the course.
