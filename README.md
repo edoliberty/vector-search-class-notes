@@ -119,35 +119,47 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
  
 ## Selected literature 
 
-
-
-* [An elementary proof of the Johnson-Lindenstrauss lemma.](https://cseweb.ucsd.edu/~dasgupta/papers/jl.pdf) S. DasGupta and A. Gupta (1999)
-
-
-* [k-means++: the advantages of careful seeding](https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf) David Arthur, Sergei Vassilvitskii (2007)
-
-* [Almost Optimal Unrestricted Fast Johnson-Lindenstrauss Transform](ttps://arxiv.org/abs/1005.5513) Nir Ailon, Edo Liberty (2010)
-
-
-* Product quantization (PQ) and inverted file: [“Product quantization for nearest neighbor search”](https://hal.inria.fr/inria-00514462v2/document), Jégou & al., PAMI 2011. 
-
-* Fast k-selection on wide SIMD architectures: [“Billion-scale similarity search with GPUs”](https://arxiv.org/abs/1702.08734), Johnson & al, ArXiv 1702.08734, 2017 
-
-* HNSW indexing method: ["Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs"](https://arxiv.org/abs/1603.09320), Malkov & al., ArXiv 1603.09320, 2016
-
-* In-register vector comparisons: ["Quicker ADC : Unlocking the Hidden Potential of Product Quantization with SIMD"](https://arxiv.org/abs/1812.09162), André et al, PAMI'19, also used in ["Accelerating Large-Scale Inference with Anisotropic Vector Quantization"](https://arxiv.org/abs/1908.10396), Guo, Sun et al, ICML'20.
-
-* Graph-based indexing method NSG: ["Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph"](https://arxiv.org/abs/1707.00143), Cong Fu et al, VLDB 2019.
-
-* Local search quantization (an additive quantization method): ["Revisiting additive quantization"](https://drive.google.com/file/d/1dDuv6fQozLQFS2AJoNNFGTH499QIp_vO/view), Julieta Martinez, et al. ECCV 2016 and ["LSQ++: Lower running time and higher recall in multi-codebook quantization"](https://openaccess.thecvf.com/content_ECCV_2018/html/Julieta_Martinez_LSQ_lower_runtime_ECCV_2018_paper.html), Julieta Martinez, et al. ECCV 2018.
-
-* Learning-based quantizer: ["Unsupervised Neural Quantization for Compressed-Domain Similarity Search"](https://openaccess.thecvf.com/content_ICCV_2019/html/Morozov_Unsupervised_Neural_Quantization_for_Compressed-Domain_Similarity_Search_ICCV_2019_paper.html), Morozov and Banenko, ICCV'19
-
-* Neural indexing: ["Transformer Memory as a Differentiable Search Index"](https://arxiv.org/abs/2202.06991), Tan & al. ArXiV'22
-
-* The hybrid RAM-disk index: ["Diskann: Fast accurate billion-point nearest neighbor search on a single node"](https://proceedings.neurips.cc/paper/2019/hash/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Abstract.html), Subramanya & al. NeurIPS'19
-
-* The nearest neighbor descent method: [Efficient k-nearest neighbor graph construction for generic similarity measures](https://www.ambuehler.ethz.ch/CDstore/www2011/proceedings/p577.pdf) from Dong et al., WWW'11
+* [Simple and Deterministic Matrix Sketching](https://doi.org/10.1145/2487575.2487623) - Liberty, Edo
+* [An Algorithm for Online K-Means Clustering](https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.7) - Edo Liberty and Ram Sriharsha and Maxim Sviridenko
+* Even Simpler Deterministic Matrix Sketching - Edo Liberty
+* [Efficient K-Nearest Neighbor Graph Construction for Generic Similarity Measures](https://doi.org/10.1145/1963405.1963487) - Dong, Wei and Moses, Charikar and Li, Kai
+* [DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node](https://proceedings.neurips.cc/paper_files/paper/2019/file/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Paper.pdf) - Jayaram Subramanya, Suhas and Devvrit, Fnu and Simhadri, Harsha Vardhan and Krishnawamy, Ravishankar and Kadekodi, Rohan
+* Transformer Memory as a Differentiable Search Index - Yi Tay and Vinh Q. Tran and Mostafa Dehghani and Jianmo Ni and Dara Bahri and Harsh Mehta and Zhen Qin and Kai Hui and Zhe Zhao and Jai Gupta and Tal Schuster and William W. Cohen and Donald Metzler
+* [Unsupervised Neural Quantization for Compressed-Domain Similarity Search](https://doi.ieeecomputersociety.org/10.1109/ICCV.2019.00313) - S. Morozov and A. Babenko
+* [LSQ++: Lower Running Time and Higher Recall in Multi-Codebook Quantization](https://doi.org/10.1007/978-3-030-01270-0_30) - Martinez, Julieta and Zakhmi, Shobhit and Hoos, Holger H. and Little, James J.
+* [Revisiting Additive Quantization](https://api.semanticscholar.org/CorpusID:7340738) - Julieta Martinez and Joris Clement and Holger H. Hoos and J. Little
+* Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph - Cong Fu and Chao Xiang and Changxu Wang and Deng Cai
+* Accelerating Large-Scale Inference with Anisotropic Vector Quantization - Ruiqi Guo and Philip Sun and Erik Lindgren and Quan Geng and David Simcha and Felix Chern and Sanjiv Kumar
+* [Quicker {ADC} : Unlocking the Hidden Potential of Product Quantization With {SIMD](https://doi.org/10.1109%2Ftpami.2019.2952606) - Fabien Andre and Anne-Marie Kermarrec and Nicolas Le Scouarnec
+* Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs - Yu. A. Malkov and D. A. Yashunin
+* Billion-scale similarity search with GPUs - Jeff Johnson and Matthijs Douze and Herv{\'e} J{\'e}gou
+* Product Quantization for Nearest Neighbor Search - J{\'e}gou, Herve and Douze, Matthijs and Schmid, Cordelia
+* [Worst-Case Analysis for Region and Partial Region Searches in Multidimensional Binary Search Trees and Balanced Quad Trees](https://doi.org/10.1007/BF00263763) - Lee, D. T. and Wong, C. K.
+* [Random Projection Trees and Low Dimensional Manifolds](https://doi.org/10.1145/1374376.1374452) - Dasgupta, Sanjoy and Freund, Yoav
+* Simple and Deterministic Matrix Sketching - Edo Liberty
+* [Sampling from large matrices: An approach through geometric functional analysis](http://doi.acm.org/10.1145/1255443.1255449) - Rudelson, Mark and Vershynin, Roman
+* [Near Optimal Column-Based Matrix Reconstruction](http://dx.doi.org/10.1109/FOCS.2011.21) - Boutsidis, Christos and Drineas, Petros and Magdon-Ismail, Malik
+* A Note on Element-wise Matrix Sparsification via Matrix-valued Chernoff Bounds - Petros Drineas and Anastasios Zouzias
+* [A fast random sampling algorithm for sparsifying matrices](http://dx.doi.org/10.1007/11830924_26) - Arora, Sanjeev and Hazan, Elad and Kale, Satyen
+* Sparsity Lower Bounds for Dimensionality Reducing Maps - Jelani Nelson and Huy L. Nguyen
+* Sparser Johnson-Lindenstrauss transforms - Daniel M. Kane and Jelani Nelson
+* Clustering Data Streams: Theory and Practice - Sudipto Guha and Adam Meyerson and Nina Mishra and Rajeev Motwani and Liadan O'Callaghan
+* Streaming k-means approximation - Nir Ailon and Ragesh Jaiswal and Claire Monteleoni
+* k-means++: the advantages of careful seeding - David Arthur and Sergei Vassilvitskii
+* Smaller Coresets for $k$-Median and $k$-Means Clustering - S. {Har-Peled} and A. Kushal
+* \it K}-means clustering via principal component analysis - Chris H. Q. Ding and Xiaofeng He
+* Least squares quantization in pcm - Stuart P. Lloyd
+* Spectral Relaxation for K-means Clustering - Hongyuan Zha and Xiaofeng He and Chris H. Q. Ding and Ming Gu and Horst D. Simon
+* [Multidimensional binary search trees used for associative searching](http://doi.acm.org/10.1145/361002.361007) - Bentley, Jon Louis
+* Similarity Search in High Dimensions via Hashing - Aristides Gionis and Piotr Indyk and Rajeev Motwani
+* Similarity estimation techniques from rounding algorithms - Moses Charikar
+* Pass Efficient Algorithms for Approximating Large Matrices - Petros Drineas and Ravi Kannan
+* A Note On Sums of Independent Random MAtrices After Ahlswede-Winter - Roman Vershynin
+* Strong converse for identification via quantum channels - Rudolf Ahlswede and Andreas Winter
+* An Almost Optimal Unrestricted Fast Johnson-Lindenstrauss Transform - Nir Ailon and Edo Liberty
+* An elementary proof of the {J}ohnson-{L}indenstrauss lemma - S. DasGupta and A. Gupta
+* Approximate nearest neighbors and the fast {J}ohnson-{L}indenstrauss transform - Nir Ailon and Bernard Chazelle
+* Extensions of {L}ipschitz mappings into a {H}ilbert space - W. B. Johnson and J. Lindenstrauss
 
 ## Build
 

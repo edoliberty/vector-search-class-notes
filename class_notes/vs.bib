@@ -1,12 +1,171 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Edo Liberty at 2023-08-26 15:22:21 -0400 
+%% Created for Edo Liberty at 2023-08-27 22:55:34 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@inproceedings{nngraph,
+	abstract = {K-Nearest Neighbor Graph (K-NNG) construction is an important operation with many web related applications, including collaborative filtering, similarity search, and many others in data mining and machine learning. Existing methods for K-NNG construction either do not scale, or are specific to certain similarity measures. We present NN-Descent, a simple yet efficient algorithm for approximate K-NNG construction with arbitrary similarity measures. Our method is based on local search, has minimal space overhead and does not rely on any shared global index. Hence, it is especially suitable for large-scale applications where data structures need to be distributed over the network. We have shown with a variety of datasets and similarity measures that the proposed method typically converges to above 90\% recall with each point comparing only to several percent of the whole dataset on average.},
+	address = {New York, NY, USA},
+	author = {Dong, Wei and Moses, Charikar and Li, Kai},
+	booktitle = {Proceedings of the 20th International Conference on World Wide Web},
+	date-added = {2023-08-27 22:55:23 -0400},
+	date-modified = {2023-08-27 22:55:31 -0400},
+	doi = {10.1145/1963405.1963487},
+	isbn = {9781450306324},
+	keywords = {iterative method, k-nearest neighbor graph, arbitrary similarity measure},
+	location = {Hyderabad, India},
+	numpages = {10},
+	pages = {577--586},
+	publisher = {Association for Computing Machinery},
+	series = {WWW '11},
+	title = {Efficient K-Nearest Neighbor Graph Construction for Generic Similarity Measures},
+	url = {https://doi.org/10.1145/1963405.1963487},
+	year = {2011},
+	bdsk-url-1 = {https://doi.org/10.1145/1963405.1963487}}
+
+@inproceedings{NEURIPS2019_09853c7f,
+	author = {Jayaram Subramanya, Suhas and Devvrit, Fnu and Simhadri, Harsha Vardhan and Krishnawamy, Ravishankar and Kadekodi, Rohan},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2023-08-27 22:54:28 -0400},
+	date-modified = {2023-08-27 22:54:28 -0400},
+	editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+	publisher = {Curran Associates, Inc.},
+	title = {DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node},
+	url = {https://proceedings.neurips.cc/paper_files/paper/2019/file/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Paper.pdf},
+	volume = {32},
+	year = {2019},
+	bdsk-url-1 = {https://proceedings.neurips.cc/paper_files/paper/2019/file/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Paper.pdf}}
+
+@misc{tay2022transformer,
+	archiveprefix = {arXiv},
+	author = {Yi Tay and Vinh Q. Tran and Mostafa Dehghani and Jianmo Ni and Dara Bahri and Harsh Mehta and Zhen Qin and Kai Hui and Zhe Zhao and Jai Gupta and Tal Schuster and William W. Cohen and Donald Metzler},
+	date-added = {2023-08-27 22:53:43 -0400},
+	date-modified = {2023-08-27 22:53:43 -0400},
+	eprint = {2202.06991},
+	primaryclass = {cs.CL},
+	title = {Transformer Memory as a Differentiable Search Index},
+	year = {2022}}
+
+@inproceedings{neuralQuantization,
+	abstract = {We tackle the problem of unsupervised visual descriptors compression, which is a key ingredient of large-scale image retrieval systems. While the deep learning machinery has benefited literally all computer vision pipelines, the existing state-of-the-art compression methods employ shallow architectures, and we aim to close this gap by our paper. In more detail, we introduce a DNN architecture for the unsupervised compressed-domain retrieval, based on multi-codebook quantization. The proposed architecture is designed to incorporate both fast data encoding and efficient distances computation via lookup tables. We demonstrate the exceptional advantage of our scheme over existing quantization approaches on several datasets of visual descriptors via outperforming the previous state-of-the-art by a large margin.},
+	address = {Los Alamitos, CA, USA},
+	author = {S. Morozov and A. Babenko},
+	booktitle = {2019 IEEE/CVF International Conference on Computer Vision (ICCV)},
+	date-added = {2023-08-27 22:52:56 -0400},
+	date-modified = {2023-08-27 22:53:14 -0400},
+	doi = {10.1109/ICCV.2019.00313},
+	keywords = {quantization (signal);image coding;computer architecture;visualization;computer vision;encoding;databases},
+	month = {nov},
+	pages = {3036-3045},
+	publisher = {IEEE Computer Society},
+	title = {Unsupervised Neural Quantization for Compressed-Domain Similarity Search},
+	url = {https://doi.ieeecomputersociety.org/10.1109/ICCV.2019.00313},
+	year = {2019},
+	bdsk-url-1 = {https://doi.ieeecomputersociety.org/10.1109/ICCV.2019.00313},
+	bdsk-url-2 = {https://doi.org/10.1109/ICCV.2019.00313}}
+
+@inproceedings{LSQ,
+	abstract = {Multi-codebook quantization (MCQ) is the task of expressing a set of vectors as accurately as possible in terms of discrete entries in multiple bases. Work in MCQ is heavily focused on lowering quantization error, thereby improving distance estimation and recall on benchmarks of visual descriptors at a fixed memory budget. However, recent studies and methods in this area are hard to compare against each other, because they use different datasets, different protocols, and, perhaps most importantly, different computational budgets. In this work, we first benchmark a series of MCQ baselines on an equal footing and provide an analysis of their recall-vs-running-time performance. We observe that local search quantization (LSQ) is in practice much faster than its competitors, but is not the most accurate method in all cases. We then introduce two novel improvements that render LSQ (i) more accurate and (ii) faster. These improvements are easy to implement, and define a new state of the art in MCQ.},
+	address = {Berlin, Heidelberg},
+	author = {Martinez, Julieta and Zakhmi, Shobhit and Hoos, Holger H. and Little, James J.},
+	booktitle = {Computer Vision -- ECCV 2018: 15th European Conference, Munich, Germany, September 8-14, 2018, Proceedings, Part XVI},
+	date-added = {2023-08-27 22:51:54 -0400},
+	date-modified = {2023-08-27 22:52:02 -0400},
+	doi = {10.1007/978-3-030-01270-0_30},
+	isbn = {978-3-030-01269-4},
+	location = {Munich, Germany},
+	numpages = {16},
+	pages = {508--523},
+	publisher = {Springer-Verlag},
+	title = {LSQ++: Lower Running Time and Higher Recall in Multi-Codebook Quantization},
+	url = {https://doi.org/10.1007/978-3-030-01270-0_30},
+	year = {2018},
+	bdsk-url-1 = {https://doi.org/10.1007/978-3-030-01270-0_30}}
+
+@inproceedings{Martinez2016RevisitingAQ,
+	author = {Julieta Martinez and Joris Clement and Holger H. Hoos and J. Little},
+	booktitle = {European Conference on Computer Vision},
+	date-added = {2023-08-27 22:51:08 -0400},
+	date-modified = {2023-08-27 22:51:08 -0400},
+	title = {Revisiting Additive Quantization},
+	url = {https://api.semanticscholar.org/CorpusID:7340738},
+	year = {2016},
+	bdsk-url-1 = {https://api.semanticscholar.org/CorpusID:7340738}}
+
+@misc{fu2018fast,
+	archiveprefix = {arXiv},
+	author = {Cong Fu and Chao Xiang and Changxu Wang and Deng Cai},
+	date-added = {2023-08-27 22:49:58 -0400},
+	date-modified = {2023-08-27 22:49:58 -0400},
+	eprint = {1707.00143},
+	primaryclass = {cs.LG},
+	title = {Fast Approximate Nearest Neighbor Search With The Navigating Spreading-out Graph},
+	year = {2018}}
+
+@misc{guo2020accelerating,
+	archiveprefix = {arXiv},
+	author = {Ruiqi Guo and Philip Sun and Erik Lindgren and Quan Geng and David Simcha and Felix Chern and Sanjiv Kumar},
+	date-added = {2023-08-27 22:49:28 -0400},
+	date-modified = {2023-08-27 22:49:28 -0400},
+	eprint = {1908.10396},
+	primaryclass = {cs.LG},
+	title = {Accelerating Large-Scale Inference with Anisotropic Vector Quantization},
+	year = {2020}}
+
+@article{Andre_2021,
+	author = {Fabien Andre and Anne-Marie Kermarrec and Nicolas Le Scouarnec},
+	date-added = {2023-08-27 22:48:12 -0400},
+	date-modified = {2023-08-27 22:48:12 -0400},
+	doi = {10.1109/tpami.2019.2952606},
+	journal = {{IEEE} Transactions on Pattern Analysis and Machine Intelligence},
+	month = {may},
+	number = {5},
+	pages = {1666--1677},
+	publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+	title = {Quicker {ADC} : Unlocking the Hidden Potential of Product Quantization With {SIMD}},
+	url = {https://doi.org/10.1109%2Ftpami.2019.2952606},
+	volume = {43},
+	year = 2021,
+	bdsk-url-1 = {https://doi.org/10.1109%2Ftpami.2019.2952606},
+	bdsk-url-2 = {https://doi.org/10.1109/tpami.2019.2952606}}
+
+@misc{hnsw,
+	archiveprefix = {arXiv},
+	author = {Yu. A. Malkov and D. A. Yashunin},
+	date-added = {2023-08-27 22:47:22 -0400},
+	date-modified = {2023-08-27 22:47:31 -0400},
+	eprint = {1603.09320},
+	primaryclass = {cs.DS},
+	title = {Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs},
+	year = {2018}}
+
+@misc{johnson2017billionscale,
+	archiveprefix = {arXiv},
+	author = {Jeff Johnson and Matthijs Douze and Herv{\'e} J{\'e}gou},
+	date-added = {2023-08-27 22:46:42 -0400},
+	date-modified = {2023-08-27 22:46:42 -0400},
+	eprint = {1702.08734},
+	primaryclass = {cs.CV},
+	title = {Billion-scale similarity search with GPUs},
+	year = {2017}}
+
+@article{pq,
+	author = {J{\'e}gou, Herve and Douze, Matthijs and Schmid, Cordelia},
+	date-added = {2023-08-27 22:45:03 -0400},
+	date-modified = {2023-08-27 22:45:14 -0400},
+	doi = {10.1109/TPAMI.2010.57},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	number = {1},
+	pages = {117-128},
+	title = {Product Quantization for Nearest Neighbor Search},
+	volume = {33},
+	year = {2011},
+	bdsk-url-1 = {https://doi.org/10.1109/TPAMI.2010.57}}
 
 @article{kdtree-worstcase,
 	abstract = {Given a file of N records each of which has k keys, the worst-case analysis for the region and partial region queries in multidimensional binary search trees and balanced quad trees are presented. It is shown that the search algorithms proposed in [1, 3] run in time O(k N 1 1/k) for region queries in both tree structures. For partial region queries with s keys specified, the search algorithms run at most in time O(s N 1 1/ k ) in both structures.},
