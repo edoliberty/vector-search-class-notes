@@ -79,8 +79,12 @@ The resulting search complexity of the algorithm is $O(d^2n^{1-1/d})$ which is s
 While this analysis is rather simple it actually cannot be made much better  \cite{kdtree-worstcase}. There are many variants of this algorithm \cite{rptrees} and practical observations that claim kd-trees perform well in low dimensions. 
 
 Kd-trees are used extensively in 3D libraries to organize objects, lights, etc. 
-They are data adaptive, meaning that they support concentrating on areas where there is data. 
+They are data adaptive, meaning that they can concentrate on areas where there is data, and keep large boxes when there is not much detail~\cite{subramanian1990search,douze2015quickcsg}. 
+In addition to nearest neighbor search they support following rays, organizing data for collision detection, etc. 
 
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/dragon_diff_dup.jpg}
+\end{center}
 
 
 Nevertheless, this runtime is only better than the brute force solution of $O(nd)$ when $n > d^d$ which already hints that there might be a problem with high dimensions.
@@ -101,7 +105,7 @@ The expectation of $X$ is the sum over the possible values times the probability
 \end{equation}
 
 
-Continuous random variables are described by their distribution function $\varphi$.
+Continuous scalar random variables are described by their distribution function $\varphi$.
 $$
 \Pr[Y \in [a,b]] = \int_{a}^{b}\varphi (t) dt.
 $$
@@ -283,7 +287,7 @@ Or, using the union bound:
 \section{Curse of Dimensionality}
 A prime example for the curse of dimensionality is that a random point in $[0,1]^d$ is likely to be far from any set of $n$ points in the unit cube.
 Consider the distance between the query point $q$ and an input data vector $x$.
-We want to show that $\|x_i-q\|^2 \in \Omega(d)$.
+We want to show that $\|x_i-q\|^2 \in \Omega(d)$. *** $\Omega(d)$ not defined *** 
 
 First, notice that $\Pr[|x(j)- q(j)| \ge 1/4] \ge 1/2$. The expected distance between $x$ and $q$ is at least $d/8$.
 Since $q(j)$ are independently drown, we can apply the Chernoff bound and get that for all $n$ points in the data set
@@ -328,6 +332,7 @@ We can see this in two ways.
 
 First, we can see that the expected dot product of any vector $x$ with a random vector $y$ is small.
 It is trivial that $\E[\langle x,y \rangle] = 0$ since the distribution of $y$ is symmetric.
+*** what is the condition on the data distribution? We sometimes have positive vectors \. Seems that this is random vectors on unit sphere or Gaussian isotropic *** 
 Moreover, $\E[\langle x,y \rangle^2] = 1/d$.
 To see this, consider $y_1,y_2,\ldots,y_d$ where $y_1 = y$ and $y_2,\ldots,y_d$ complete $y$ to an orthogonal basis.
 Clearly, the distribution of all $y_i$ are identical (but not independent)
@@ -349,7 +354,7 @@ As we've seen, a ``typical'' distance from a random query to the nearest neighbo
 Note that the side of any box in any space partitioning scheme (including kd-trees, of course) is at most $1$. 
 As a result, we guaranteed to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
 Note that this is more than the brute force solution of $O(nd)$ when $d > \log(n)$. 
-
+*** this is a contradiction because the tree depth is also limited by the number of points in the dataset. What is interesting is that beyond some dimension, the tree leaves are "open", ie. not all borders are closed by a hyperplane *** 
 
 
 
