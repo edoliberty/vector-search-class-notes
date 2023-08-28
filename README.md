@@ -120,6 +120,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 ## Selected literature 
 
 * [A fast random sampling algorithm for sparsifying matrices](http://dx.doi.org/10.1007/11830924_26) - Arora, Sanjeev and Hazan, Elad and Kale, Satyen - 2006
+* A search structure based on kd trees for efficient ray tracing - Subramanian, KR and Fussel, DS - 1990
 * Accelerating Large-Scale Inference with Anisotropic Vector Quantization - Ruiqi Guo and Philip Sun and Erik Lindgren and Quan Geng and David Simcha and Felix Chern and Sanjiv Kumar - 2020
 * [An Algorithm for Online K-Means Clustering](https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.7) - Edo Liberty and Ram Sriharsha and Maxim Sviridenko
 * An Almost Optimal Unrestricted Fast Johnson-Lindenstrauss Transform - Nir Ailon and Edo Liberty - 2011
@@ -140,7 +141,8 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 * [Multidimensional binary search trees used for associative searching](http://doi.acm.org/10.1145/361002.361007) - Bentley, Jon Louis - 1975
 * [Near-Optimal Entrywise Sampling for Data Matrices](https://proceedings.neurips.cc/paper_files/paper/2013/file/6e0721b2c6977135b916ef286bcb49ec-Paper.pdf) - Achlioptas, Dimitris and Karnin, Zohar S and Liberty, Edo - 2013
 * Pass Efficient Algorithms for Approximating Large Matrices - Petros Drineas and Ravi Kannan - 2003
-* Product Quantization for Nearest Neighbor Search - J{\'e}gou, Herve and Douze, Matthijs and Schmid, Cordelia - 2011
+* Product Quantization for Nearest Neighbor Search - Jegou, Herve and Douze, Matthijs and Schmid, Cordelia - 2011
+* QuickCSG: Arbitrary and faster boolean combinations of n solids - Douze, Matthijs and Franco, Jean-S{\'e}bastien and Raffin, Bruno - 2015
 * [Quicker {ADC} : Unlocking the Hidden Potential of Product Quantization With {SIMD](https://doi.org/10.1109%2Ftpami.2019.2952606) - Fabien Andre and Anne-Marie Kermarrec and Nicolas Le Scouarnec - 2021
 * [Random Projection Trees and Low Dimensional Manifolds](https://doi.org/10.1145/1374376.1374452) - Dasgupta, Sanjoy and Freund, Yoav - 2008
 * [Revisiting Additive Quantization](https://api.semanticscholar.org/CorpusID:7340738) - Julieta Martinez and Joris Clement and Holger H. Hoos and J. Little - 2016

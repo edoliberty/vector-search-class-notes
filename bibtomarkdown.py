@@ -6,7 +6,7 @@
 
 
 def bibtokvdict(bib):
-    lines = [line.strip() for line in bib.split('\n')[1:]]
+    lines = [line.strip() for line in bib.split('\n') if "=" in line]
     pairs = [line.split('=',1) for line in lines]
     return dict([ (pair[0].strip(), pair[1].strip('{}, ')) for pair in pairs])
 
