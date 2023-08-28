@@ -235,6 +235,13 @@ sense that they minimize:
 The mapping of $x_i \rightarrow  U_{k}^{T}x_i = y_i $ thus reduces the dimension of any set of points  $x_1,\ldots,x_n$ in $\R^{m}$ to 
 a set of points $y_1,\ldots,y_n$ in $\R^{k}$ optimally in the squared loss sense. This is commonly referred to as Principal Component Analysis (PCA).
 
+
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{images/pca.png}
+\end{center}
+
+
 \section{Closest orthogonal matrix}
 The SVD also allows to find the orthogonal matrix that is closest to
 a given matrix. Again, suppose that $A = U \Sigma V^{T}$ and $W$ is
@@ -331,7 +338,65 @@ This is because computing $A^{T}Ax$ requires $O(mn)$ operations and
 for each of the first $k$ singular values and vectors this is performed $s$ times. 
 
 The main problem with this algorithm is that its running time is heavily influenced by the value of $\lambda$.
-Other variants of this algorithm are much less sensitive to the value of this parameter, but are out of the scope of this class. 
+This is, in fact, an artifact of the analysis rather than the algorithm. Next, we see a gap independent analysis.
+
+
+
+\section{Gap independent analysis}
+We show a short proof from \cite{liberty2016short} of a spectral gap independent property of simultaneous iterations. This follows the similar analyses \cite{RokhlinST09,HalkoMT2011,MuscoM15,WittenE15}. 
+
+\begin{lemma} Let $A \in \R^{n \times m}$ be an arbitrary matrix and let $G \in \R^{m \times k}$ be a matrix of i.i.d.\ random Gaussian entries. 
+Let $t = c\cdot \log(n/\eps)/\eps$ and $Z = \operatorname{span}((AA^T)^t A G)$ then
+\[
+||A - ZZ^TA|| \le (1+\eps)\sigma_{k+1}
+\]
+with high probability depending only on the universal constant $c$.
+\end{lemma}
+\begin{proof}
+$||A - ZZ^TA|| = \max_{x :\|x\|=1}  \|x^T A\|$ such that $\|x^TZ\| = 0$.
+We change variables $A = USV^T$ and $x = Uy$ and $G' = V^TG$.
+Note that $G'$ is also a matrix of i.id.\ Gaussian entries because $V$ is orthogonal.
+This reduces to 
+$\max_{y:\|y\|=1}  \|y^TS\|$ such that $y^TS^{2t+1}G' = 0$.
+We now break $y$, $S$, and $G'$ to two blocks each such that
+\[
+y =
+\left(\begin{array}{c}
+y_1 \\ \hline
+y_2 \\
+\end{array}\right)
+%
+\mbox{,\;\;}
+%
+S = \left(\begin{array}{c|c}
+S_1 & 0 \\ \hline
+0 & S_2 \\
+\end{array}\right)
+%
+\mbox{,\;\;}
+%
+G' = \left(\begin{array}{c}
+G'_1  \\ \hline
+G'_2 \\
+\end{array}\right)
+\] 
+and $y_1 \in \R^{k}$, $y_2 \in \R^{n-k}$, $S_1 \in \R^{k \times k}$, $S_2 \in \R^{(n-k) \times (n-k)}$, $G'_1 \in \R^{k \times k}$, and $G'_2 \in \R^{(n-k) \times k}$.
+\begin{eqnarray*}
+0 &=& \|y^T S^{2t+1} G'\| = \|y_1^T S^{2t+1}_1 G'_1+  y_2^T S^{2t+1}_2 G'_2\| \\
+&\ge& \|y_1^T S^{2t+1}_1 G'_1\| -  \|y_2^T S^{2t+1}_2 G'_2\| \\
+&\ge& \|y_1^T S^{2t+1}_1\|/\|G'^{-1}_1\| - \|y_2^T\| \cdot \|S^{2t+1}_2 \| \cdot  \|G'_2\| \\
+&\ge& |y_1(i)| \sigma_{i}^{2t+1}/\|G'^{-1}_1\| - \sigma_{k+1}^{2t+1} \cdot  \|G'_2\| \ .
+\end{eqnarray*}
+\noindent This gives that $|y_1(i)| \le (\sigma_{k+1}/\sigma_i)^{2t+1}\|G'_2\| \|G'^{-1}_1\|$. Equipped with this inequality we bound the expression $\|y^TS\|$.
+Let $k' \le k$ be such that $\sigma_{k'} \ge (1+\eps)\sigma_{k+1}$ and $\sigma_{k'+1} < (1+\eps)\sigma_{k+1}$.
+\begin{eqnarray}
+||A - ZZ^TA||^2 &=& \|y^TS\|^2 = \sum_{i=1}^{k'}y^2_i \sigma_i^2 + \sum_{i=k'+1}^{n}y^2_i \sigma_i^2 \\
+&\le& \left( \|G'_2\|^2 \|G'^{-1}_1\|^2 \sum_{i=1}^{k'}(\sigma_{k+1}/\sigma_i)^{4t}  \sigma_{k+1}^2 \right) + (1+\eps)\sigma_{k+1}^2 \\
+&\le& \left[ \|G'_2\|^2 \|G'^{-1}_1\|^2 k (1/(1+\eps))^{4t} + (1+\eps)\right]\sigma_{k+1}^2 \le (1+2\eps)\sigma_{k+1}^2
+\end{eqnarray}
+The last step is correct as long as $ \|G'_2\|^2 \|G'^{-1}_1\|^2 k (1/(1+\eps))^{4t} \le \eps \sigma^2_{k+1}$ which holds for $t \ge \log(\|G'_2\|^2 \|G'^{-1}_1\|^2 k/\eps) /4\log(1+\eps) = O(\log(n/\eps)/\eps)$. The last inequality uses the fact that $G'_1$ and $G'_2$ are random gaussian due to rotational invariance of the Gaussian distribution. This means that $\|G'_2\|^2 \|G'^{-1}_1\|^2 = O(\operatorname{poly}(n))$ with high probability \cite{Rudelson08}.
+Finally, $||A - ZZ^TA|| \le \sqrt{1+2\eps}\cdot\sigma_{k+1} \le (1+\eps)\sigma_{k+1}$.
+\end{proof}
 
 
 
