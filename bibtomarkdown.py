@@ -20,6 +20,8 @@ def kvdicttomarkdown(kvdict):
         s += f" {kvdict.get('title','')}"
     if 'author' in kvdict:
         s += f" - {kvdict['author']}"
+    if 'year' in kvdict:
+        s += f" - {kvdict['year']}"
     return s
 
 if __name__ == "__main__":
@@ -32,9 +34,8 @@ if __name__ == "__main__":
         text = f.read()
 
     bibs = [s.strip() for s in text.split('\n\n') if s.startswith('@')]
-
-
     kvdicts = [bibtokvdict(bib) for bib in bibs]
-
-    for kvdict in kvdicts:
-        print(kvdicttomarkdown(kvdict))
+    kvdicts.sort(key = lambda m:m['title'].lower())
+    mds = [kvdicttomarkdown(kvdict) for kvdict in kvdicts]
+    for md in mds:
+        print(md)
