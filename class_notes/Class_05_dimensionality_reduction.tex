@@ -30,9 +30,7 @@ Now we can compute the following:
 We are only left to show that $A = \sum_{\ell=1}^{m} \sigma_{\ell} u_{\ell} v_{\ell}^{T}$.
 To do that consider the test vector $w = \sum_{i=1}^{m} \alpha_i u_i$.
 \begin{eqnarray*}
-|| w^{T}(A - \sum_{\ell=1}^{m} \sigma_{\ell} u_{\ell} v_{\ell}^{T})|| &=& || (\sum_{i=1}^{m}\alpha_i u^{T}_{i})(A - \sum_{\ell=1}^{m} \sigma_{\ell} u_{\ell} v_{\ell}^{T})|| \\
-&=& || (\sum_{i=1}^{m}\alpha_{i} u^{T}_{i}A - \sum_{i=1}^{m}\sum_{\ell=1}^{m} \delta(i,\ell) \alpha_i \sigma_{\ell} v_{\ell}^{T}|| \\
-&=& || (\sum_{i=1}^{m}\alpha_{i} \sigma_{i} v^{T}_{i} - \sum_{i=1}^{m} \alpha_i \sigma_{i} v_{i}^{T}|| = 0
+w^TA =  \sum_{i=1}^{m} \alpha_i u_i^TA = \sum_{i=1}^{m} \alpha_i \sigma_i v_i^T = \sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_i \sigma_j (u_i^Tu_j) v_j^T = (\sum_{i=1}^{m}\alpha_i u_i^T)(\sum_{j=1}^{m}\sigma_j u_j v_j^T)  = w^T(\sum_{j=1}^{m}\sigma_j u_j v_j^T)\\
 \end{eqnarray*}
 %
 The vectors $u_\ell$ and $v_{\ell}$ are called the left and right singular vectors of $A$ and $\sigma_\ell$ are the singular vectors of $A$.
