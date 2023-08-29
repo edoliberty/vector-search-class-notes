@@ -43,7 +43,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Modern Computer Vision models 
 
 
-1. 9/29 - Class 4 - Low Dimensional Vector Search [Edo]
+1. 9/29 - [Class 4 - Low Dimensional Vector Search](class_notes/Class_04_low_dimensional_vector_search.pdf) [Edo]
 	* Vector search problem definition 
 	* k-d tree, space partitioning data structures
 	* Worst case proof for kd-trees
@@ -51,7 +51,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Concentration Of Measure phenomena. Orthogonality of random vectors in high dimensions
 	* Curse of dimensionality and the failure of space partitioning
 
-1. 10/6 - Class 5 - Dimensionality Reduction [Edo] 
+1. 10/6 - [Class 5 - Dimensionality Reduction](class_notes/Class_05_dimensionality_reduction.pdf) [Edo] 
 	* Singular Value Decomposition (SVD)
 	* Applications of the SVD
 	* Rank-k approximation in the spectral norm
