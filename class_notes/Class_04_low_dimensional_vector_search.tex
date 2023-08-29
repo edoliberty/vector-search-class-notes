@@ -3,8 +3,6 @@
 
 \begin{document}
 
-
-
 \lecturetitle{Class 4 - Low Dimensional Vector Search}
 \section{Nearest Neighbor Search Definition}
 
@@ -17,8 +15,6 @@ return $X_{q,r} = \{i \;\; | \;\; ||q - x_i || \le r \}$.
 \end{definition}
 We will later extend this definition in the obvious way to max-inner-product search (MIPS) and cosine similarity search.
 Improving the practical and theoretical asymptotic time complexity for computing $X_{q,r}$ is the topic of this class.
-
-*** maybe not necessary to specify poly here since nobody would rpopose an exponential method as the baseline is O(nd) *** 
 
 \begin{center}
 \includegraphics[width=1.0\textwidth]{images/vectorsearch.png}
@@ -45,13 +41,11 @@ Then, do the same for each of the two resulting boxes wrt to the second coordina
 Then, again, for the four resulting boxes wrt to the third coordinate and so on.
 Splitting stops when there is exactly one point in each leaf.
 
-
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/kdtrees-construction.png}
 \end{center}
 
-
-When searching the tree, we consider only points whose bounding boxes touch the query region (ball in this case).
+\noindent When searching the tree, we consider only points whose bounding boxes touch the query region (ball in this case).
 
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/kdtrees-search.png}
@@ -86,13 +80,10 @@ In addition to nearest neighbor search they support following rays, organizing d
 \includegraphics[width=0.9\textwidth]{images/dragon_diff_dup.jpg}
 \end{center}
 
-
 Nevertheless, this runtime is only better than the brute force solution of $O(nd)$ when $n > d^d$ which already hints that there might be a problem with high dimensions.
 Before introducing the source of the problem, we should cover some basic facts about random variables. Facts that will serve us for the rest of the course.
 
-
 \section{Probability Tools and Facts Recap}
-
 A variable $X$ is a random variable if it assumes different values
 according to a probability distribution. For example, $X$ can 
 denote the outcome of a three sided die throw. 
@@ -103,7 +94,6 @@ The expectation of $X$ is the sum over the possible values times the probability
 \E[X] = \sum_{x=1}^{3}x \Pr(X = x)=
 1\frac{1}{3}+2\frac{1}{3}+3\frac{1}{3} = 2
 \end{equation}
-
 
 Continuous scalar random variables are described by their distribution function $\varphi$.
 $$
@@ -130,7 +120,6 @@ For example, the distribution of $X$ above includes three Dirac-$\delta$ functio
 In this class, though, we will see only well behaved distributions.
 \end{remark}
 
-
 \subsection{Dependence and Independence}
 A variable $X$ is said to be {\it dependent} on $Y$ if the distribution of $X$ given $Y$ is different than the distribution of $X$. 
 For example, assume the variable $X$ takes the value $1$ if $Y$ takes a
@@ -155,11 +144,9 @@ Two variables are said to be {\it Independent} if:
 They are {\it dependent} otherwise.
 \end{definition}
 
-
 \begin{fact}
 If two variables $X$ and $Y$ are {\it Independent} the so are $f(X)$ and $g(Y)$ for any functions $f$ and $g$.
 \end{fact}
-
 
 \begin{fact}[Linearity of expectation 1]%
 For any random variable and any constant $\alpha$:
@@ -175,7 +162,6 @@ For any two random variables
 \end{equation}
 even if they are dependent.
 \end{fact}
-
 
 \begin{fact}[Multiplication of random variables]%
 For any two {\bf independent} random variables
@@ -233,7 +219,6 @@ For any set of $m$ events $A_1,\ldots,A_m$:
 In words, the probability that one or more events happen is at most the sum of the 
 individual event probabilities. 
 
-
 \begin{theorem}[Chernoff's bound]
 Let $X_i$ be a set of {\bf independent} random variables such that $\E[X_i] = 0$ and $|X_i| \le 1$ almost surely.
 Also define $\sigma_i^2 = \E[X_i^2]$ and $\sigma^2 = \sum_i \sigma_i^2$. Then:
@@ -255,9 +240,6 @@ Also define $\sigma_i^2 = \E[X_i^2]$ and $\sigma^2 = \sum_i \sigma_i^2$. Then:
 
 Now, for $x \in [-1,1]$ we have that $e^x \le 1 + x + x^2$ so $\E[e^{\lambda X_i}] \le 1 + \E[\lambda X_i] + \lambda^2 \E[X_i^2] \le 1 + \lambda^2 \sigma^2_i$.
 Now, since $1+x \le e^x$ we have that $1 + \lambda^2 \sigma^2_i \le e^{\lambda^2 \sigma_i^2}$. Combining the above we have that $\E[e^{\lambda X_i}] \le e^{\lambda^2 \sigma_i^2}$
-
-
-
 
 \begin{eqnarray}
 \Pi_i \E[e^{\lambda X_i}] /e^{\lambda  t} &\le& \Pi_i \E[e^{\lambda^2 \sigma_i^2}] /e^{\lambda  t}\\
@@ -281,13 +263,10 @@ Or, using the union bound:
 \]
 \end{theorem}
 
-
-
-
 \section{Curse of Dimensionality}
 A prime example for the curse of dimensionality is that a random point in $[0,1]^d$ is likely to be far from any set of $n$ points in the unit cube.
 Consider the distance between the query point $q$ and an input data vector $x$.
-We want to show that $\|x_i-q\|^2 \in \Omega(d)$. *** $\Omega(d)$ not defined *** 
+We want to show that $\|x_i-q\|^2 \in \Omega(d)$.
 
 First, notice that $\Pr[|x(j)- q(j)| \ge 1/4] \ge 1/2$. The expected distance between $x$ and $q$ is at least $d/8$.
 Since $q(j)$ are independently drown, we can apply the Chernoff bound and get that for all $n$ points in the data set
@@ -297,7 +276,6 @@ Now, consider the kd-tree data structure and algorithm run on a random query.
 If the radius of the ball around $q$ is less than $d/16$ the query is ``uninteresting'' since it is likely to return no results at all.
 On the other hand, if the radius is greater than $d/16$ than the ball around $q$ will cross all the major partitions 
 along one of the axes. That means that the algorithm will visit at least $2^d$ partitions.
-
 
 \section{Volumes of balls and cubes}
 Another interesting phenomenon that occurs in high dimensions is the fact that unit spheres 
@@ -327,37 +305,30 @@ A counter intuitive way of viewing this is that almost the entire volume of the 
 
 \section{Orthogonality of random vectors}
 
-It turns out that two random vectors are also almost orthogonal.
-We can see this in two ways.
+A uniformly chosen random vector from the unit sphere ($q$) is almost orthogonal to any fixed vector ($x$) with high probability.
+We can see this in two ways. First, we can see that the expected dot product of any vector $x$ with a the random vector $q$ is small.
+It is trivial that $\E[\langle x,q \rangle] = \langle x,\E[q] \rangle] = 0$.
 
-First, we can see that the expected dot product of any vector $x$ with a random vector $y$ is small.
-It is trivial that $\E[\langle x,y \rangle] = 0$ since the distribution of $y$ is symmetric.
-*** what is the condition on the data distribution? We sometimes have positive vectors \. Seems that this is random vectors on unit sphere or Gaussian isotropic *** 
-Moreover, $\E[\langle x,y \rangle^2] = 1/d$.
-To see this, consider $y_1,y_2,\ldots,y_d$ where $y_1 = y$ and $y_2,\ldots,y_d$ complete $y$ to an orthogonal basis.
-Clearly, the distribution of all $y_i$ are identical (but not independent)
-$\E[\langle x,y \rangle^2] = \E[\langle x,y_1\rangle^2] = \E[\frac{1}{d}\sum_{i=1}^{d}\langle x,y_i\rangle^2] = \frac{1}{d}\|x\|^2 = \frac{1}{d}$.
+Moreover, $\E[\langle x,q \rangle^2] = 1/d$.
+To see this, consider $q_1,q_2,\ldots,q_d$ where $q_1 = q$ and $q_2,\ldots,q_d$ complete $q$ to an orthogonal basis.
+Clearly, the distribution of all $q_i$ are identical (but not independent)
+$\E[\langle x, q \rangle^2] = \E[\langle x,q_1\rangle^2] = \E[\frac{1}{d}\sum_{i=1}^{d}\langle x,q_i\rangle^2] = \frac{1}{d}\|x\|^2$.
 
-It is not hard to show that in fact for any vector $x$, if $y$ is chosen uniformly at random from the unit sphere 
-then $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] \le e^{-t^2/2}$.
-First, replace that uniform distribution over the unit sphere with an i.i.d. distribution of Gaussians $y(i)\sim \N(0,\frac{1}{\sqrt{d}})$.
-Note that $E[\|y\|^2] = 1$, moreover, from the sharp concentration of the $\chi^2$ distribution we know that $E[\|y\|^2] \approx 1$.
-For convenience we will assume that $E[\|y\|^2] = 1$ and will ignore the small inaccuracy.
+It is not hard to show that in fact for any vector $x$, if $q$ is chosen uniformly at random from the unit sphere 
+then $\Pr[ \langle x, q \rangle  \ge \frac{t}{\sqrt{d}}] \le e^{-t^2/2}$.
+First, replace that uniform distribution over the unit sphere with an i.i.d. distribution of Gaussians $q(i)\sim \N(0,\frac{1}{\sqrt{d}})$.
+Note that $E[\|q\|^2] = 1$, moreover, from the sharp concentration of the $\chi^2$ distribution we know that $E[\|q\|^2] \approx 1$.
+For convenience we will assume that $E[\|q\|^2] = 1$ and will ignore the small inaccuracy.
 Moreover, due to the rotational invariance of the Gaussian distribution we have that any direction is equally likely and thus this
 new distribution approximates the uniform distribution over the sphere.
-Next, notice that due to the rotational invariance $\langle x,y \rangle \sim \N(0,\frac{\|x\|}{\sqrt{d}}) = \N(0,\frac{1}{\sqrt{d}})$.
-Therefore, letting $Z \sim \N(0,1)$ we have $\Pr[ \langle x,y \rangle  \ge \frac{t}{\sqrt{d}}] = \Pr[Z \ge t] \le e^{-t^2/2}$.
-
+Next, notice that due to the rotational invariance $\langle x,q \rangle \sim \N(0,\frac{\|x\|}{\sqrt{d}})$ 
+and $\Pr[ \langle x, q \rangle  \ge \frac{t\|x\|}{\sqrt{d}}] \le e^{-t^2/2}$.
 
 \section{The failure of space partitioning schemes}
 As we've seen, a ``typical'' distance from a random query to the nearest neighbor in a $d$-dimensional unit box is at the scale of $\sqrt{d}$.
 Note that the side of any box in any space partitioning scheme (including kd-trees, of course) is at most $1$. 
 As a result, we guaranteed to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
 Note that this is more than the brute force solution of $O(nd)$ when $d > \log(n)$. 
-*** this is a contradiction because the tree depth is also limited by the number of points in the dataset. What is interesting is that beyond some dimension, the tree leaves are "open", ie. not all borders are closed by a hyperplane *** 
-
-
-
 
 \bibliographystyle{plain}
 \bibliography{vs}
