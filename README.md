@@ -9,7 +9,7 @@ The course covers the core concepts, algorithms, and data structures used for mo
 
 
 ## Abstract
-Long Term Memory is a fundamental capability in the modern AI Stack. At their core, these systems are using Vector search. Vector search is also a fundamental tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the scientific foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
+Long Term Memory is a fundamental capability in the modern AI Stack. At their core, these systems use Vector search. Vector search is also a fundamental tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the scientific foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
 
 
 ## Syllabus
