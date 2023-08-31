@@ -1,5 +1,8 @@
 # Long Term Memory in AI - Vector Search and Databases
-COS 597A is given at Princeton during the Fall semester 2023 by
+
+**NOTE:** COS 597A class times changed for Fall semester 2023. Classes will be held **9am-12noon**.
+
+## Instructors
 
 * [Edo Liberty](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database.
 
