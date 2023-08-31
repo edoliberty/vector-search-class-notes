@@ -4,6 +4,7 @@ COS 597A is given at Princeton during the Fall semester 2023 by
 * [Edo Liberty](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database.
 
 * [Matthijs Douze](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en]) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search.
+* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: nbrukhim@princeton.edu.
 
 The course covers the core concepts, algorithms, and data structures used for modern vector search systems and platforms. An advanced undergraduate or graduate student with some hands-on experience in linear algebra, probability, algorithms, and data structures should be able to follow this course.
 
