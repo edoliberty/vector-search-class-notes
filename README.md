@@ -20,7 +20,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 
 
 
-1. 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo]
+* 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo]
 	* Intro to the course: Topic, Schedule, Project, Grading, ...
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
 	* Advantages: scalability, instant updates, and explainability
@@ -31,20 +31,20 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Define vector, vector search, ranking, retrieval, recall
 
 	
-1. 9/15 - Class 2 - Text embeddings [Matthijs]
+* 9/15 - Class 2 - Text embeddings [Matthijs]
 	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-occurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similarity search)
 	* Sentence embeddings: How to train, masked LM. Properties of sentence embeddings.
 	* Large Language Models: reasoning as an emerging property of a LM. What happens when the training set = the whole web
 
 
-1. 9/22 - Class 3 - Image embeddings [Matthijs] 
+* 9/22 - Class 3 - Image embeddings [Matthijs] 
 	* Pixel structures of images. Early works on direct pixel indexing
 	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends)Direct indexing of local descriptors for image matching, local descriptor pooling (Fisher, VLAD)
 	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
 	* Modern Computer Vision models 
 
 
-1. 9/29 - [Class 4 - Low Dimensional Vector Search](class_notes/Class_04_low_dimensional_vector_search.pdf) [Edo]
+* 9/29 - [Class 4 - Low Dimensional Vector Search](class_notes/Class_04_low_dimensional_vector_search.pdf) [Edo]
 	* Vector search problem definition 
 	* k-d tree, space partitioning data structures
 	* Worst case proof for kd-trees
@@ -52,7 +52,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Concentration Of Measure phenomena. Orthogonality of random vectors in high dimensions
 	* Curse of dimensionality and the failure of space partitioning
 
-1. 10/6 - [Class 5 - Dimensionality Reduction](class_notes/Class_05_dimensionality_reduction.pdf) [Edo] 
+* 10/6 - [Class 5 - Dimensionality Reduction](class_notes/Class_05_dimensionality_reduction.pdf) [Edo] 
 	* Singular Value Decomposition (SVD)
 	* Applications of the SVD
 	* Rank-k approximation in the spectral norm
@@ -65,18 +65,18 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Matrices with normally distributed independent entries
 	* Fast Random Projections
 
-1. 10/13 - No Class - Midterm Examination Week
+* 10/13 - No Class - Midterm Examination Week
 
-1. 10/20 - No Class - Fall Recess
+* 10/20 - No Class - Fall Recess
 
-1. 10/27 - Class 6 - Approximate Nearest Neighbor Search [Edo]
+* 10/27 - Class 6 - Approximate Nearest Neighbor Search [Edo]
 	* Definition of Approximate Nearest Neighbor Search (ANNS)
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
 	* Definition of Locality Sensitive Hashing and examples
 	* The LSH Algorithm
 	* LSH Analysis, proof of correctness, and asymptotics
 
-1. 11/3 - Class 7 - Clustering [Edo]
+* 11/3 - Class 7 - Clustering [Edo]
 	* Semantic clustering: properties (purity, as aid for annotation)
 	* Clustering from a similarity graph (spectral clustering, agglomerative clustering)
 	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
@@ -86,14 +86,14 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Initialization strategies (kmeans++, progressive dimensions with PCA)
 	* The inverted file model. Relationship with sparse matrices
 	
-1. 11/10 - Class 8 - Quantization for lossy vector compression [Matthijs]
+* 11/10 - Class 8 - Quantization for lossy vector compression [Matthijs]
 	* Vector quantization is a topline (directly optimizes the objective)
 	* Binary quantization and hamming comparison 
 	* Product quantization. Chunked vector quantization. Optimized vector quantization
 	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 	* Cost of coarse quantization vs. inverted list scanning
 	
-1. 11/17 - Class 9 - Graph based indexes [Guest lecture]
+* 11/17 - Class 9 - Graph based indexes [Guest lecture]
 	* Early works: hierarchical k-means 
 	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps
@@ -101,7 +101,9 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* NSG. Evolving a graph k-NN graph	
 
 
-1. 11/10 - Class 10 - Computing Hardware and Vector Search [Guest lecture]
+* 11/24 - No Class - Thanksgiving Recess
+
+* 12/1 - Class 10 - Computing Hardware and Vector Search [Guest lecture]
 	* Computing platform: local vs. service / CPU vs. GPU 
 	* efficient implementation of brute force search
 	* distance computations for product quantization -- tradeoffs. SIMD implementation
@@ -110,11 +112,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Using a hierarchy of memory types (RAM + SSD or RAM + GPU RAM)
 
 
-1. 11/17 - Class 11- Student project and paper presentations [Edo]
-
-1. 11/24 - No Class - Thanksgiving Recess
-
-1. 12/1 - Class 12 - Student project and paper presentations [Edo]
+* TBD - Student project and paper presentations [Edo]
 
 
  
