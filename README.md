@@ -96,7 +96,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 	* Cost of coarse quantization vs. inverted list scanning
 	
-* 11/17 - Class 9 - Graph based indexes [Guest lecturer + Edo]
+* 11/17 - Class 9 - Graph based indexes (Guest lecturer [Harsha Vardhan Simhadri](https://harsha-simhadri.org/) + Edo]
 	* Early works: hierarchical k-means 
 	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps
