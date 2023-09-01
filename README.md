@@ -23,7 +23,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 
 
 
-* 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo]
+* 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo + Nataly]
 	* Intro to the course: Topic, Schedule, Project, Grading, ...
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
 	* Advantages: scalability, instant updates, and explainability
@@ -96,7 +96,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 	* Cost of coarse quantization vs. inverted list scanning
 	
-* 11/17 - Class 9 - Graph based indexes [Guest lecture]
+* 11/17 - Class 9 - Graph based indexes [Guest lecturer + Edo]
 	* Early works: hierarchical k-means 
 	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps
@@ -106,17 +106,7 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 
 * 11/24 - No Class - Thanksgiving Recess
 
-* 12/1 - Class 10 - Computing Hardware and Vector Search [Guest lecture]
-	* Computing platform: local vs. service / CPU vs. GPU 
-	* efficient implementation of brute force search
-	* distance computations for product quantization -- tradeoffs. SIMD implementation
-	* Parallelization and distribution -- sharding vs. inverted list distribution
-	* Using co-processors (GPUs)
-	* Using a hierarchy of memory types (RAM + SSD or RAM + GPU RAM)
-
-
-* TBD - Student project and paper presentations [Edo]
-
+* 12/1 - Class 10 - Student project and paper presentations [Edo + Nataly]
 
  
 ## Selected literature 
