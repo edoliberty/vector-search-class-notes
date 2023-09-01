@@ -4,24 +4,18 @@
 
 ## Instructors
 
-* [Edo Liberty](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database.
+* [Edo Liberty](www.edoliberty.com), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database. [google scholar](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en).
 
-* [Matthijs Douze](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en]) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search.
-* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: nbrukhim@princeton.edu.
+* [Matthijs Douze](https://ai.meta.com/people/matthijs-douze/) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search. [google scholar](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en).
 
-The course covers the core concepts, algorithms, and data structures used for modern vector search systems and platforms. An advanced undergraduate or graduate student with some hands-on experience in linear algebra, probability, algorithms, and data structures should be able to follow this course.
+* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: nbrukhim@princeton.edu. [google scholar](https://scholar.google.com/citations?user=jZwEDZoAAAAJ&hl=en).
 
 
-## Abstract
-Long Term Memory is a fundamental capability in the modern AI Stack. At their core, these systems use Vector search. Vector search is also a fundamental tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the scientific foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
+## Overview
+Long Term Memory is a foundational capability in the modern AI Stack. At their core, these systems use vector search. Vector search is also a basic tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the theoretical foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
 
 
 ## Syllabus
-
-**The class contents below are tentative.**
-
-
-
 
 * 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo + Nataly]
 	* Intro to the course: Topic, Schedule, Project, Grading, ...
@@ -107,6 +101,23 @@ Long Term Memory is a fundamental capability in the modern AI Stack. At their co
 * 11/24 - No Class - Thanksgiving Recess
 
 * 12/1 - Class 10 - Student project and paper presentations [Edo + Nataly]
+
+
+## Project 
+
+Class work includes a final project. It will be graded based on a) a write up and b) and an in-class presentation 
+
+* Project Administrator: Nataly 
+* Projects can be done individually, in teams of two or at most three students.
+* Expect to spend a few hours over the semester on the project proposal 
+* All project proposals should be approved before the thanksgiving break
+* Projects can be in three different flavors
+  * Theory/Research: Explore a research problem, conduct literature survey, and propose a potential idea for improvement. 
+  * Data Science/AI: Build an interesting vector search application using Pinecone, explain what value it brings, and what insights you gained. 
+  * Engineering/HPC: Adapt or add to FAISS, explain your improvements,  show results. 
+* Expect to spent 3-5 _full days_ on the project itself (on par with preparing for a final exam)
+* Project write up submission is due 12/1
+* In class project project presentation; single students present their work in five minutes. Teams of two students 10 minutes. Teams of three, 15 minutes.
 
  
 ## Selected literature 
