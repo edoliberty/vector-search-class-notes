@@ -88,15 +88,14 @@ cd vector-search-class-notes
 	* The LSH Algorithm
 	* LSH Analysis, proof of correctness, and asymptotics
 
-* 11/3 - Class 7 - Clustering [Edo]
-	* Semantic clustering: properties (purity, as aid for annotation)
-	* Clustering from a similarity graph (spectral clustering, agglomerative clustering)
-	* Vector clustering: mean squared error criterion. Tradeoff with number of clusters
-	* Relationship between vector clustering and quantization (OOD extension) 
-	* The k-means clustering measure and Lloyd's algorithm
-	* Lloyd's optimality conditions
-	* Initialization strategies (kmeans++, progressive dimensions with PCA)
-	* The inverted file model. Relationship with sparse matrices
+* 11/3 - [Class 7 - Clustering](class_notes/Class_07_clustering.pdf) [Edo]
+	* K-means clustering - mean squared error criterion.
+	* Lloyd’s Algorithm
+	* k-means and PCA
+	* ε-net argument for fixed dimensions
+	* Sampling based seeding for k-means
+	* k-means++
+	* The Inverted File Model (IVF)
 	
 * 11/10 - Class 8 - Quantization for lossy vector compression [Matthijs]
 	* Vector quantization is a topline (directly optimizes the objective)
