@@ -4,16 +4,31 @@
 
 ## Instructors
 
-* [Edo Liberty](www.edoliberty.com), the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database. [google scholar](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en).
+* [Edo Liberty](https://edoliberty.github.io) the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database. [Publications](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en).
 
-* [Matthijs Douze](https://ai.meta.com/people/matthijs-douze/) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search. [google scholar](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en).
+* [Matthijs Douze](https://ai.meta.com/people/matthijs-douze/) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search. [Publications](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en).
 
-* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: nbrukhim@princeton.edu. [google scholar](https://scholar.google.com/citations?user=jZwEDZoAAAAJ&hl=en).
+* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: <nbrukhim@princeton.edu>. [Publications](https://scholar.google.com/citations?user=jZwEDZoAAAAJ&hl=en).
 
 
 ## Overview
 Long Term Memory is a foundational capability in the modern AI Stack. At their core, these systems use vector search. Vector search is also a basic tool for systems that manipulate large collections of media like search engines, knowledge bases, content moderation tools, recommendation systems, etc. As such, the discipline lays at the intersection of Artificial Intelligence and Database Management Systems. This course will cover the theoretical foundations and practical implementation of vector search applications, algorithms, and systems. The course will be evaluated with project and in-class presentation. 
 
+## Contribute
+
+All class materials are intended to be used freely by academics anywhere, students and professors alike. Please contribute in the form of pull requests or by opening issues.
+
+```
+https://github.com/edoliberty/vector-search-class-notes
+```
+
+On unix-like systems (e.g. macos) with bibtex and pdflatex available you should be able to run this:
+
+```
+git clone git@github.com:edoliberty/vector-search-class-notes.git
+cd vector-search-class-notes
+./build
+```
 
 ## Syllabus
 
@@ -105,22 +120,34 @@ Long Term Memory is a foundational capability in the modern AI Stack. At their c
 
 ## Project 
 
-Class work includes a final project. It will be graded based on a) a write up and b) and an in-class presentation 
+Class work includes a final project. It will be graded based on 
 
-* Project Administrator: Nataly 
-* Projects can be done individually, in teams of two or at most three students.
-* Expect to spend a few hours over the semester on the project proposal 
-* All project proposals should be approved before the thanksgiving break
-* Projects can be in three different flavors
-  * Theory/Research: Explore a research problem, conduct literature survey, and propose a potential idea for improvement. 
-  * Data Science/AI: Build an interesting vector search application using Pinecone, explain what value it brings, and what insights you gained. 
-  * Engineering/HPC: Adapt or add to FAISS, explain your improvements,  show results. 
-* Expect to spent 3-5 _full days_ on the project itself (on par with preparing for a final exam)
-* Project write up submission is due 12/1
-* In class project project presentation; single students present their work in five minutes. Teams of two students 10 minutes. Teams of three, 15 minutes.
+1. 50% - Project submission 
+1. 50% - In-class presentation 
 
- 
-## Selected literature 
+**Projects can be in three different flavors**
+
+* _Theory/Research_: propose a new algorithm for a problem we explored in class (or modify an existing one), explain what it achieves, give experimental evidence or a proof for its behavior. If you choose this kind of project you are expected to submit a write up.
+* _Data Science/AI_: create an interesting use case for vector search using Pinecone, explain what data you used, what value your application brings, and what insights you gained. If you choose this kind of project you are expected to submit code (e.g. Jupyter Notebooks) and a writeup of your results and insights. 
+* _Engineering/HPC_: adapt or add to FAISS, explain your improvements, show experimental results. If you choose this kind of project you are expected to submit a branch of FAISS for review along with a short writeup of your suggested improvement and experiments. 
+
+
+**Project schedule**  
+
+* 11/24 - One-page project proposal approved by the instructors
+* 12/1 - Final project submission
+* 12/1 - In-class presentation
+
+
+**Some more details**
+
+* Project Instructor: Nataly <nbrukhim@princeton.edu>
+* Projects can be worked on individually, in teams of two or at most three students.
+* Expect to spend a few hours over the semester on the project proposal. Try to get it approved well ahead of the deadline. 
+* Expect to spent 3-5 _full days_ on the project itself (on par with preparing for a final exam) 
+* In class project project presentation are 5 minutes _per student_ (teams of two students present for 10 minutes. Teams of three, 15 minutes).
+ 
+## Selected Literature 
 
 * [A fast random sampling algorithm for sparsifying matrices](http://dx.doi.org/10.1007/11830924_26) - Arora, Sanjeev and Hazan, Elad and Kale, Satyen - 2006
 * [A Randomized Algorithm for Principal Component Analysis](http://dx.doi.org/10.1137/080736417) - Vladimir Rokhlin and Arthur Szlam and Mark Tygert - 2009
@@ -169,20 +196,3 @@ Class work includes a final project. It will be graded based on a) a write up an
 * Transformer Memory as a Differentiable Search Index - Yi Tay and Vinh Q. Tran and Mostafa Dehghani and Jianmo Ni and Dara Bahri and Harsh Mehta and Zhen Qin and Kai Hui and Zhe Zhao and Jai Gupta and Tal Schuster and William W. Cohen and Donald Metzler - 2022
 * [Unsupervised Neural Quantization for Compressed-Domain Similarity Search](https://doi.ieeecomputersociety.org/10.1109/ICCV.2019.00313) - S. Morozov and A. Babenko - 2019
 * [Worst-Case Analysis for Region and Partial Region Searches in Multidimensional Binary Search Trees and Balanced Quad Trees](https://doi.org/10.1007/BF00263763) - Lee, D. T. and Wong, C. K. - 1977
-
-## Build
-
-On unix-like systems with the bibtex and pdflatex available you should be able to do this:
-
-
-```
-git clone git@github.com:edoliberty/vector-search-class-notes.git
-cd vector-search-class-notes
-./build
-```
-
-
-
-## Contribute
-
-These class notes are intended to be used freely by academics anywhere, students and professors alike. Please feel free to contribute in the form of pull requests or opening issues.
