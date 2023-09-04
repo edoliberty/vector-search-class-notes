@@ -4,11 +4,13 @@
 
 ## Instructors
 
-* [Edo Liberty](https://edoliberty.github.io) the Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database. [Publications](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en).
+* [Edo Liberty](https://edoliberty.github.io), Founder and CEO of [Pinecone](https://www.pinecone.io), the world's leading Vector Database. [Publications](https://scholar.google.com/citations?user=QHS_pZAAAAAJ&hl=en).
 
-* [Matthijs Douze](https://ai.meta.com/people/matthijs-douze/) the architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search. [Publications](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en).
+* [Matthijs Douze](https://ai.meta.com/people/matthijs-douze/), Research Scientist at Meta. Architect and main developer of [FAISS](https://github.com/facebookresearch/faiss) the most popular and advanced open source library for vector search. [Publications](https://scholar.google.com/citations?user=0eFZtREAAAAJ&hl=en).
 
-* [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: <nbrukhim@princeton.edu>. [Publications](https://scholar.google.com/citations?user=jZwEDZoAAAAJ&hl=en).
+* Teaching assistant [Nataly Brukhim](https://www.cs.princeton.edu/~nbrukhim/) PhD sdudent working with Prof. Elad Hazan and researcher at Google AI Princeton. email: <nbrukhim@princeton.edu>. [Publications](https://scholar.google.com/citations?user=jZwEDZoAAAAJ&hl=en).
+
+* Guest lecture by [Harsha Vardhan Simhadri](https://harsha-simhadri.org/) Senior Principal Researcher, at Microsoft Research. Creator of [DiskANN](https://github.com/Microsoft/DiskANN). [Publications](https://scholar.google.com/citations?user=bW65tuAAAAAJ&hl=en)
 
 
 ## Overview
