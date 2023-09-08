@@ -34,7 +34,7 @@ cd vector-search-class-notes
 
 ## Syllabus
 
-* 9/8 - Class 1 - Introduction to Vector Search [Matthijs + Edo + Nataly]
+* 9/8 - [Class 1 - Introduction to Vector Search](class_notes/Class_01_introduction.pdf) [Matthijs + Edo + Nataly]
 	* Intro to the course: Topic, Schedule, Project, Grading, ...
 	* Embeddings as an information bottleneck. Instead of learning end-to-end, use embeddings as an intermediate representation
 	* Advantages: scalability, instant updates, and explainability
