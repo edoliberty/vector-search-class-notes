@@ -45,7 +45,7 @@ cd vector-search-class-notes
 	* Define vector, vector search, ranking, retrieval, recall
 
 	
-* 9/15 - Class 2 - Text embeddings [Matthijs]
+* 9/15 - [Class 2 - Text embeddings](class_notes/Class_02_text_embeddings.pdf) [Matthijs]
 	* 2-layer word embeddings. Word2vec and fastText, obtained via a factorization of a co-occurrence matrix. Embedding arithmetic: king + woman - man = queen, (already based on similarity search)
 	* Sentence embeddings: How to train, masked LM. Properties of sentence embeddings.
 	* Large Language Models: reasoning as an emerging property of a LM. What happens when the training set = the whole web
