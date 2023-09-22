@@ -51,7 +51,7 @@ cd vector-search-class-notes
 	* Large Language Models: reasoning as an emerging property of a LM. What happens when the training set = the whole web
 
 
-* 9/22 - Class 3 - Image embeddings [Matthijs] 
+* 9/22 - [Class 3 - Image embeddings](class_notes/Class_03_image_embeddings.pdf) [Matthijs] 
 	* Pixel structures of images. Early works on direct pixel indexing
 	* Traditional CV models. Global descriptors (GIST). Local descriptors (SIFT and friends)Direct indexing of local descriptors for image matching, local descriptor pooling (Fisher, VLAD)
 	* Convolutional Neural Nets. Off-the-shelf models. Trained specifically (contrastive learning, self-supervised learning)
