@@ -449,12 +449,12 @@ We start with bounding the probability that $\sum_{i=1}^{k} z^{2}_{i} \ge k(1+\e
 \]
 Since $z \sim \N(0,1)$ we can compute $\E[e^{\lambda z^2}]$ exactly:
 \[
-\E [e^{\lambda z^{2}}] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{\lambda t^{2}} e^{-\frac{t^{2}}{2}} dt =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{(t\sqrt{1-2\lambda})^{2}}{2}}dt = e^{\frac{1}{2} \log(1-2\lambda)}
+\E [e^{\lambda z^{2}}] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{\lambda t^{2}} e^{-\frac{t^{2}}{2}} dt =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{(t\sqrt{1-2\lambda})^{2}}{2}}dt = \frac{1}{\sqrt{1-2\lambda}}% e^{\frac{1}{2} \log(1-2\lambda)}
 \]
 The final step is by substituting $t' = t\sqrt{1-2\lambda}$ and recalling that $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{t'^{2}}{2}}dt' = 1$.
-Finally, using the fact that $log(\frac{1}{1-2\lambda}) \le 2\lambda + 4\lambda^2$ for $\lambda \in [0,1/4]$ we have:
+Finally, using the fact that $\frac{1}{\sqrt{1-2\lambda}} \le 2\lambda + 4\lambda^2$ for $\lambda \in [0,1/4]$ we have:
 \[
-\E [e^{\lambda z^{2}}] = \frac{1}{\sqrt{1-2\lambda}} = e^{\frac{1}{2} \log(\frac{1}{1-2\lambda})} \le e^{\lambda + 2\lambda^2}
+\E [e^{\lambda z^{2}}] \le e^{\lambda + 2\lambda^2}
 \]
 Substituting this into the equation above we have that:
 \[
