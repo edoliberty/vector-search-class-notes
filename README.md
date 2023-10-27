@@ -83,7 +83,7 @@ cd vector-search-class-notes
 
 * 10/20 - No Class - Fall Recess
 
-* 10/27 - Class 6 - Approximate Nearest Neighbor Search [Edo]
+* 10/27 - [Class 6 - Approximate Nearest Neighbor Search](Class_06_aproximate_nearest_neighbor_search.pdf) [Edo]
 	* Definition of Approximate Nearest Neighbor Search (ANNS)
 	* Criteria: Speed / accuracy / memory usage / updateability / index construction time 
 	* Definition of Locality Sensitive Hashing and examples
