@@ -99,7 +99,8 @@ cd vector-search-class-notes
 	* k-means++
 	* The Inverted File Model (IVF)
 	
-* 11/10 - Class 8 - Quantization for lossy vector compression [Matthijs]
+* 11/10 - [Class 8 - Quantization for lossy vector compression](class_notes/Class_08_quantization.pdf) **This class will take place remotely via zoom, see the edstem message to get the link** [Matthijs]
+	* Python notebook corresponding to the class: [Class_08_runbook_for_students.ipynb](class_notes/Class_08_runbook_for_students.ipynb)
 	* Vector quantization is a topline (directly optimizes the objective)
 	* Binary quantization and hamming comparison 
 	* Product quantization. Chunked vector quantization. Optimized vector quantization
