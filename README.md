@@ -106,7 +106,7 @@ cd vector-search-class-notes
 	* Additive quantization. Extension of product quantization. Difficulty in training approximations (Residual quantization, CQ, TQ, LSQ, etc.)
 	* Cost of coarse quantization vs. inverted list scanning
 	
-* 11/17 - Class 9 - Graph based indexes (Guest lecturer [Harsha Vardhan Simhadri](https://harsha-simhadri.org/) + Edo]
+* 11/17 - [Class 9 - Graph based indexes](class_notes/Class_09_graph_indexes.pdf) by Guest lecturer [Harsha Vardhan Simhadri.](https://harsha-simhadri.org/)
 	* Early works: hierarchical k-means 
 	* Neighborhood graphs. How to construct them. Nearest Neighbor Descent
 	* Greedy search in Neighborhood graphs. That does not work -- need long jumps

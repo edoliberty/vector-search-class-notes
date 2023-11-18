@@ -330,6 +330,22 @@ Note that the side of any box in any space partitioning scheme (including kd-tre
 As a result, we guaranteed to scan at least $\Omega(d)$ levels in the tree which is $\exp(d)$ points.
 Note that this is more than the brute force solution of $O(nd)$ when $d > \log(n)$. 
 
+
+\section{Bonus section: solution of the ``riddle" from the first class}
+You were asked to prove that the $\ell_\infty$ metric is the most general metric possible for any finite collections of objects. 
+
+Consider $n$ objects $a_1,\ldots,a_n$ and a general metric $d(\cdot,\cdot)$.
+Consider the mapping $\psi$ of each item to an $n$ dimensional vector space  $x_i = [d(a_i,a_1),d(a_i,a_2),\ldots,d(a_i,a_n)]$.
+It is now easy to see that $ \| x_i - x_j \|_\infty = d(a_i,a_j)$.
+\[
+\|x_i -x_j\|_\infty = \max_k \; | x_i(k) - x_j(k)| = \max_k |d(a_i,a_k) - d(a_j,a_k) | = |d(a_i,a_j) - d(a_i,a_j) | = d(a_i,a_j)
+\]
+Note that if $k\ne i,j$ then $ |d(a_i,a_k) - d(a_j,a_k)| \le d(a_i,a_j)$ because of the triangle inequality $d(a_i,a_k) \le  d(a_i,a_j) + d(a_j,a_k) + $ and $d(a_j,a_k) \le d(a_i,a_j) +  d(a_i,a_k)$.
+
+
+
+
+
 \bibliographystyle{plain}
 \bibliography{vs}
 
