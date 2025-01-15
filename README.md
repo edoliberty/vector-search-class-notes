@@ -198,3 +198,6 @@ Class work includes a final project. It will be graded based on
 * Transformer Memory as a Differentiable Search Index - Yi Tay and Vinh Q. Tran and Mostafa Dehghani and Jianmo Ni and Dara Bahri and Harsh Mehta and Zhen Qin and Kai Hui and Zhe Zhao and Jai Gupta and Tal Schuster and William W. Cohen and Donald Metzler - 2022
 * [Unsupervised Neural Quantization for Compressed-Domain Similarity Search](https://doi.ieeecomputersociety.org/10.1109/ICCV.2019.00313) - S. Morozov and A. Babenko - 2019
 * [Worst-Case Analysis for Region and Partial Region Searches in Multidimensional Binary Search Trees and Balanced Quad Trees](https://doi.org/10.1007/BF00263763) - Lee, D. T. and Wong, C. K. - 1977
+* [A Comprehensive Survey and Experimental Comparison of Graph-Based Approximate Nearest Neighbor Search](http://www.vldb.org/pvldb/vol14/p1964-wang.pdf) - Mengzhao Wang and Xiaoliang Xu and Qiang Yue and Yuxiang Wang - 2021
+* [Approximate Nearest Neighbor Search on High Dimensional Data - Experiments, Analyses, and Improvement](https://doi.org/10.1109/TKDE.2019.2909204) - Wen Li and Ying Zhang and Yifang Sun and Wei Wang and Mingjie Li and Wenjie Zhang and Xuemin Lin - 2020
+* [Survey of vector database management systems](https://doi.org/10.1007/s00778-024-00864-x) - James Jie Pan and Jianguo Wang and Guoliang Li - 2024
